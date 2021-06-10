@@ -76,7 +76,7 @@ theme_mode:
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1200px-Anonymous_emblem.svg.png
+avatar: https://i.pinimg.com/564x/9c/32/79/9c3279b5ac960533cbcb7e833ac4d947.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
