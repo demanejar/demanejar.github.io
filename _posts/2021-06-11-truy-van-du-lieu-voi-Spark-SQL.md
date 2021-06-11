@@ -10,7 +10,7 @@ mermaid: true
 
 ***Spark SQL là một module Spark để xử lý dữ liệu có cấu trúc, mọi dữ liệu mà Spark SQL xư lý đều ở dưới dạng DataFrame và có thể hoạt động như một công cụ truy vấn SQL phân tán. Spark SQL hỗ trợ rất nhiều loại dữ liệu đầu vào như : parquet, json, csv,...***
 
-Tron bài viết này mình sẽ viết về lần lượt các vấn đề: 
+Trong bài viết này mình sẽ viết về lần lượt các vấn đề: 
 - Chuyển từ 1 file text sang file parquet và lưu trữ tất cả trên Hadoop HDFS
 - Sử dụng Spark SQL lấy dữ liệu input là file parquet từ HDFS vừa chuyển từ file text và thực hiện truy vấn
 
