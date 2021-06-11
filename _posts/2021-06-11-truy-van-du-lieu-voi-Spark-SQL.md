@@ -75,7 +75,7 @@ Dataset<Row> parquetFile = spark.read().parquet(
 
 ### printSchema
 Sử dụng `parquetFile.printSchema();` để in ra hình dạng của dữ liệu (gồm các trường nào, mỗi trường được định nghĩa kiểu dữ liệu gì), kết quả sẽ giống như hình dưới đây: <br /><br />
-![](https://i.pinimg.com/236x/0a/5d/da/0a5dda4f65d575761f4b4fa51f097729.jpg)
+![](https://i.pinimg.com/564x/20/8c/55/208c554c407ca929eef33d50b25be0fa.jpg)
 <br />
 
 ### Truy vấn sử dụng thuộc tính của DataFrame
@@ -116,3 +116,5 @@ spark.sql("select cId, count(locID) from data group by cID").show();
 (à nhớ là phải có .show() ở cuối để nó in ra màn hình nha, không làm xong rồi không in ra lại cứ tưởng mình làm sai gì thì hỏng)
 
 Các bạn có thể xem thêm các hướng dẫn về Spark SQL tại trang chủ của Spark SQL : [https://spark.apache.org/docs/latest/sql-programming-guide.html](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+
+Mã nguồn của bài này các bạn có thể tham khảo tại : [https://github.com/demanejar/parquet-io-spark](https://github.com/demanejar/parquet-io-spark)
