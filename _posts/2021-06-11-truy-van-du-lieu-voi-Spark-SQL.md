@@ -1,7 +1,7 @@
 ---
 title: Truy vấn dữ liệu với Spark SQL sử dụng Java 
 author: trannguyenhan 
-date: 2021-04-11 20:52:00 +0700
+date: 2021-06-10 20:52:00 +0700
 categories: [Blogging, Share]
 tags: [Spark SQL, Big data, Hadoop HDFS, Parquet file]
 math: true
