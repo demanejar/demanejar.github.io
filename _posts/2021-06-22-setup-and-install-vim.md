@@ -17,6 +17,7 @@ Trước hết để dùng Vim thì bạn phải có Vim, mình sẽ sử dụng
 sudo apt-get install neovim
 ```
 Một số điều kiện để có thể sử dụng NeoVim là máy bạn phải có python2, 3 ( python 2,3 thì đã được cài đặt sẵn trên Ubuntu chúng ta chỉ cần cài thêm thư viện neovim vào là được), Ruby và Nodejs.
+
 **Cài Ruby**: 
 ```
 sudo apt-get install ruby-full
@@ -43,6 +44,7 @@ gem install neovim
 ```
 **Cài package neovim trên python2**:
 Đối với python2 thì khó khăn hơn chút, nếu như bạn nào sử dụng Ubuntu 20.10 thì đã không còn hỗ trợ pip2, để tải về pip2 thì các bạn làm theo mình như dưới đây: 
+
 Sử dụng curl để tải về file get-pip.py
 ```
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
@@ -74,7 +76,8 @@ Nếu bạn đã cài đặt đầy đủ các gói bên trên thì tất cả s
 
 ![](https://i.pinimg.com/564x/bd/20/ec/bd20ec8a3916b02e7bd88b0cb09593d0.jpg)
 
-Sau khi checkhealth hiển thị mọi thứ `OK` hết thì sẽ tới bước tiếp theo, mọi người truy cập vào https://vim-bootstrap.com/ để tạo file cấu hình khởi tạo cho Vim, tải về sau đó đổi tên thành `init.vim`
+Sau khi checkhealth hiển thị mọi thứ `OK` hết thì sẽ tới bước tiếp theo, mọi người truy cập vào https://vim-bootstrap.com/ để tạo file cấu hình khởi tạo cho Vim, tải về sau đó đổi tên thành `init.vim`.
+
 Tạo một thư mục `nvim` tại `~/.config` và copy file `init.vim` vào thư mục này, khi khởi động vim thì nó sẽ đọc thư mục này là khởi tạo các gói cần thiết.
 Truy cập vào vim một lân nữa bằng lệnh: 
 ```
@@ -92,6 +95,7 @@ nvim demo_python.py
 ![](https://i.pinimg.com/564x/f5/6d/a3/f56da3c3132f38c5887a186b51354b7e.jpg)
 
 Các bạn có thể tham khảo tại https://vimawesome.com/ để tải thêm nhiều plugin nữa phù hợp nha.
+
 Phần này giờ cũng hơi dài rồi, phần sau mình sẽ giới thiệu thêm tới mọi người một số extension hay dùng và hữu ích nha.
 
 Tham khảo [https://stackoverflow.com/](https://stackoverflow.com/questions/61981156/unable-to-locate-package-python-pip-ubuntu-20-04)
