@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-***Vim là một bản sao, có bổ sung, của chương trình soạn thảo văn bản vi của Bill Joy cho Unix. Tác giả của Vim, Bram Moolenaar, đã dựa trên mã nguồn của một cổng trình soạn thảo Stevie sang Amiga và phát hành một phiên bản cho công chúng vào năm 1991, NeoVim là một siêu mở rộng của Vim. Tại sao chúng ta lại chọn Vim? Vim có cấu hình cao và đi kèm với các tính năng đáng chú ý như tô sáng cú pháp, hỗ trợ chuột, phiên bản đồ họa, chế độ trực quan, nhiều lệnh chỉnh sửa mới và một lượng lớn tiện ích mở rộng cùng nhiều hơn nữa. Bài viết này mình sẽ hướng dẫn các bạn cài đặt Vim từ a-z để có một trình soạn thảo mạnh mẽ sử dụng cho tất cả các ngôn ngữ***
+*Vim là một bản sao, có bổ sung, của chương trình soạn thảo văn bản vi của Bill Joy cho Unix. Tác giả của Vim, Bram Moolenaar, đã dựa trên mã nguồn của một cổng trình soạn thảo Stevie sang Amiga và phát hành một phiên bản cho công chúng vào năm 1991, NeoVim là một siêu mở rộng của Vim. Tại sao chúng ta lại chọn Vim? Vim có cấu hình cao và đi kèm với các tính năng đáng chú ý như tô sáng cú pháp, hỗ trợ chuột, phiên bản đồ họa, chế độ trực quan, nhiều lệnh chỉnh sửa mới và một lượng lớn tiện ích mở rộng cùng nhiều hơn nữa. Bài viết này mình sẽ hướng dẫn các bạn cài đặt Vim từ a-z để có một trình soạn thảo mạnh mẽ sử dụng cho tất cả các ngôn ngữ*
 
 ## Tải Vim và 1 số package điều kiện  
 Trước hết để dùng Vim thì bạn phải có Vim, mình sẽ sử dụng NeoVim vì NeoVim là một phiên bản cải tiến của Vim và nó ưu việt hơn Vim.
