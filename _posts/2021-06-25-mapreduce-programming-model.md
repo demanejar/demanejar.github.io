@@ -7,7 +7,7 @@ tags: [Ubuntu, Mapreduce, Bigdata, Java]
 math: true
 mermaid: true
 ---
-*Mapreduce là một mô hình lập trình để triển khai và xử lý dữ liệu lớn. Lập trình viên sẽ phải viết 2 hàm là map và reduce, trong đó hàm map xử lý các cặp key/value đầu vào cho ra kết quả là các cặp key/value trung gian, và hàm reduce sẽ gộp tất cả value có key giống nhau lại. WordCount là một ví dụ điển hình cho Mapreduce mà sẽ được mình minh họa trong bài viết này*
+*Mapreduce là một mô hình lập trình để triển khai và xử lý dữ liệu lớn. Lập trình viên sẽ phải viết 2 hàm là map và reduce, trong đó hàm map xử lý các cặp key/value đầu vào cho ra kết quả là các cặp key/value trung gian, và hàm reduce sẽ gộp tất cả value trung gian lại có key trung gian lại với nhau. WordCount là một ví dụ điển hình cho Mapreduce mà sẽ được mình minh họa trong bài viết này*
 
 ## Tại sao Mapreduce lại ra đời?
 Như phần giới thiệu thì ai cũng biết là mapreduce là viết gộp lại của map và reduce là 2 hàm chính trong phương pháp lập trình này mà lập trình viên phải viết. Mô hình lập trình này bắt nguồn chính là từ Google, hay rõ ràng hơn là từ 1 bài báo của Google. Vấn đề đặt ra là cần phải song song hóa các tính toán, phân tán dữ liệu và phải có khả năng chịu lỗi cao. 
