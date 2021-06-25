@@ -44,4 +44,4 @@ reduce(string key, List values){
 Các bạn có thể theo dõi chương trình WordCount được viết bằng Java của mình [TẠI ĐÂY](https://github.com/demanejar/word-count-hadoop)
 
 ## Kết luận 
-Mapreduce là không phải là mô hình duy nhất giúp song song hóa tốt mà còn rất nhiều các mô hình lập trình khác giúp xử lý dữ liệu lớn bằng cách song song hóa. Tuy nhiên, mapreduce là đơn giản, dễ tiếp cận. Để hiểu hơn nữa về mapreduce bạn có thể tìm hiểu và đọc thêm bài báo của Google [Mapreduce : xử lý dữ liệu đơn giản hóa trên các cụm lớn](https://github.com/trannguyenhan/download-folder/blob/main/mapreduce-osdi04.pdf)
+Mapreduce là không phải là mô hình duy nhất giúp song song hóa tốt mà còn rất nhiều các mô hình lập trình khác giúp xử lý dữ liệu lớn bằng cách song song hóa. Tuy nhiên, mapreduce là đơn giản, dễ tiếp cận. Để hiểu hơn nữa về mapreduce bạn có thể tìm hiểu và đọc thêm bài báo của Google [Mapreduce : Simplified Data Processing on Large Clusters](https://github.com/demanejar/download-folder/blob/main/mapreduce-osdi04.pdf)
