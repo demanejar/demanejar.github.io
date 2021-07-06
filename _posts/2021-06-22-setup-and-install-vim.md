@@ -1,7 +1,7 @@
 ---
 title: Cấu hình và cài đặt Vim từ A-Z 
 author: trannguyenhan
-date: 2021-06-22 20:52:00 +0700
+date: 2222-06-22 20:52:00 +0700
 categories: [Blogging, Share]
 tags: [Ubuntu, Vim, NeoVim, IDE, Text Editor]
 math: true
