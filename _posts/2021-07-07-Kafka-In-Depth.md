@@ -82,9 +82,107 @@ Tất cả dữ liệu được lưu trên ổ đĩa chứ không phải trên r
 
 Còn khá nhiều ứng dụng nữa nhưng mình không muốn tập trung vào phần này, mọi người có thể tìm hiểu thêm.
 ## Cài đặt và sử dụng Kafka
+#### Cài Zookeeper
+Để triển khai nhanh và dễ sử dụng mình sẽ sử dụng docker. Đầu tiên ta sẽ tạo một folder kafka rồi tạo 1 file docker-compose trong đó
+```
+mkdir kafka
+cd kafka
+ ```
+ Trước hết  phải có Zookeeper, trong file docker-compose mình sẽ config như sau:
+ ```
+ services:
+  zookeeper:
+    image: zookeeper:3.4.9
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_PORT: 2181
+      ZOO_SERVERS: server.1=zookeeper:2888:3888
+    volumes:
+      - ./data/zookeeper/data:/data
+      - ./data/zookeeper/datalog:/datalog
+```
+	 
+Sau khi xong ta chạy lệnh docker-compose up. container zookeeper sẽ được tải về và ta sẽ chạy được zookeeper ở cổng 2181 như trong config.
+
+#### Cài Kafka standalone
+Mình sẽ tạm thời tắt tiến trình docker chạy cho zookeeper đi và tiến hành chỉnh sửa tiếp trong file docker-compose với nội dung như sau:
+```  
+kafka1:
+    image: confluentinc/cp-kafka:5.3.0
+    hostname: kafka1
+    ports:
+      - "9091:9091"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka1:19091,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9091
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      KAFKA_BROKER_ID: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - ./data/kafka1/data:/var/lib/kafka/data
+    depends_on:
+      - zookeeper
+```
+	 
+Sau khi chỉnh sửa xong thử chạy docker-compose up. Mình sẽ thử tạo luôn topic với lệnh:
+
+```docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create --topic my-topic --partitions 1 --replication-factor 1\n
+```
+
+#### Cài đặt Kakfa với nhiều broker:
+Để chạy một cụm kafka mình sẽ phải thêm các broker khác. ở đây sẽ có thêm 2 broker bằng việc tiếp tục chỉnh sửa file docker-compose:
+
+Thêm  broker thứ 2 với id là 2 tại cổng 9089
+``` 
+kafka2:
+    image: confluentinc/cp-kafka:5.3.0
+    hostname: kafka2
+    ports:
+      - "9089:9089"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka2:19092,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 2
+    volumes:
+      - ./data/kafka2/data:/var/lib/kafka/data
+    depends_on:
+      - zookeeper
+```
+
+Tương tự với broker thứ 3 tại cổng 9090:
+```
+  kafka3:
+    image: confluentinc/cp-kafka:5.3.0
+    hostname: kafka3
+    ports:
+      - "9090:9090"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka3:19093,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      KAFKA_BROKER_ID: 3
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - ./data/kafka3/data:/var/lib/kafka/data
+    depends_on:
+      - zookeeper
+```
+
+Giờ mình sẽ thử kiểm tra xem cụm chạy được không bằng cách tạo một topic mới với replication-factor = 3 (xem topic có được phân bố trên cả 3 brokers không):
+
+```
+docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create --topic my-topic-three --partitions 1 --replication-factor 3\n
+```
 ## Tham khảo
-https://www.cloudkarafka.com/blog/part1-kafka-for-beginners-what-is-apache-kafka.html
-https://radiant-brushlands-42789.herokuapp.com/betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9
-https://sonusharma-mnnit.medium.com/apache-kafka-in-depth-49aae1e844be
-https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f#:~:text=Kafka%20stores%20all%20the%20messages,also%20called%20as%20the%20Offset%20.
-https://vsudo.net/blog/kafka-la-gi.html
+ [Kafka for beginners part 1](https://www.cloudkarafka.com/blog/part1-kafka-for-beginners-what-is-apache-kafka.html)
+[A simple apache kafka cluster with docker kafdrop](https://radiant-brushlands-42789.herokuapp.com/betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9)
+[Apache Kafka in depth](https://sonusharma-mnnit.medium.com/apache-kafka-in-depth-49aae1e844be)
+[A practical introduction to kafka storage internals](https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f#:~:text=Kafka%20stores%20all%20the%20messages,also%20called%20as%20the%20Offset%20.)
+[Kafka là gì](https://vsudo.net/blog/kafka-la-gi.html)
