@@ -2,7 +2,7 @@
 title: Giới thiệu tổng quan Hadoop 
 author: trannguyenhan
 date: 2021-07-07 20:52:00 +0700
-categories: [Blogging, Share]
+categories: [Bigdata Route, Hadoop framework]
 tags: [Hadoop, Apache Hadoop, Big data, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
