@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-*Hadoop là frameword dựa trên 1 giải pháp tới từ Google để lưu trữ và xử lý dữ liệu lớn. Hadoop sử dụng giải thuật MapReduce sử lý song song dữ liệu đầu vào. Hadoop chạy chương trình dựa vào thuật toán MapReduce. Tóm lại, Hadoop được sử dụng để phát triển các ứng dụng có thể thực hiện phân tích thống kê hoàn chỉnh trên dữ liệu số lượng lớn.*
+*Hadoop là frameword dựa trên 1 giải pháp tới từ Google để lưu trữ và xử lý dữ liệu lớn. Hadoop sử dụng giải thuật MapReduce xử lý song song các dữ liệu đầu vào. Tóm lại, Hadoop được sử dụng để phát triển các ứng dụng có thể thực hiện phân tích thống kê hoàn chỉnh trên dữ liệu số lượng lớn.*
 
 ***Xem thêm***: [***Mô hình lập trình Mapreduce cho Bigdata***](https://demanejar.github.io/posts/mapreduce-programming-model/)
 ## Kiến trúc Hadoop 
