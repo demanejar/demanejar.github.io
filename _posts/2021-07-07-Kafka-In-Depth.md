@@ -183,7 +183,11 @@ docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create 
 ```
 ## Tham khảo
 [Kafka for beginners part 1](https://www.cloudkarafka.com/blog/part1-kafka-for-beginners-what-is-apache-kafka.html)
+
 [A simple apache kafka cluster with docker kafdrop](https://radiant-brushlands-42789.herokuapp.com/betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9)
+
 [Apache Kafka in depth](https://sonusharma-mnnit.medium.com/apache-kafka-in-depth-49aae1e844be)
+
 [A practical introduction to kafka storage internals](https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f#:~:text=Kafka%20stores%20all%20the%20messages,also%20called%20as%20the%20Offset%20.)
+
 [Kafka là gì](https://vsudo.net/blog/kafka-la-gi.html)
