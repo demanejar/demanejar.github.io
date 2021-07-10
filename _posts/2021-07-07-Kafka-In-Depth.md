@@ -87,7 +87,7 @@ Còn khá nhiều ứng dụng nữa nhưng mình không muốn tập trung vào
 ```
 mkdir kafka
 cd kafka
- ```
+```
  Trước hết  phải có Zookeeper, trong file docker-compose mình sẽ config như sau:
  ```
  services:
@@ -130,7 +130,8 @@ kafka1:
 	 
 Sau khi chỉnh sửa xong thử chạy docker-compose up. Mình sẽ thử tạo luôn topic với lệnh:
 
-```docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create --topic my-topic --partitions 1 --replication-factor 1\n
+```
+docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create --topic my-topic --partitions 1 --replication-factor 1\n
 ```
 
 #### Cài đặt Kakfa với nhiều broker:
@@ -181,7 +182,7 @@ Giờ mình sẽ thử kiểm tra xem cụm chạy được không bằng cách 
 docker exec -it kafka_kafka1_1 kafka-topics --zookeeper zookeeper:2181 --create --topic my-topic-three --partitions 1 --replication-factor 3\n
 ```
 ## Tham khảo
- [Kafka for beginners part 1](https://www.cloudkarafka.com/blog/part1-kafka-for-beginners-what-is-apache-kafka.html)
+[Kafka for beginners part 1](https://www.cloudkarafka.com/blog/part1-kafka-for-beginners-what-is-apache-kafka.html)
 [A simple apache kafka cluster with docker kafdrop](https://radiant-brushlands-42789.herokuapp.com/betterprogramming.pub/a-simple-apache-kafka-cluster-with-docker-kafdrop-and-python-cf45ab99e2b9)
 [Apache Kafka in depth](https://sonusharma-mnnit.medium.com/apache-kafka-in-depth-49aae1e844be)
 [A practical introduction to kafka storage internals](https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f#:~:text=Kafka%20stores%20all%20the%20messages,also%20called%20as%20the%20Offset%20.)
