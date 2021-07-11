@@ -41,6 +41,10 @@ reduce(string key, List values){
 }
 ```
 
+Bài toán WordCount được minh họa bằng hình vẽ sau: 
+
+![](https://i.pinimg.com/564x/25/40/64/254064f5396aab65bf1d039191cea1cf.jpg)
+
 Các bạn có thể theo dõi chương trình WordCount được viết bằng Java của mình [TẠI ĐÂY](https://github.com/demanejar/word-count-hadoop)
 
 ## Kết luận 
