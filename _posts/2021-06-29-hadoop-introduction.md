@@ -30,7 +30,7 @@ Các máy trong cụm có thể đọc và xử lý dữ liệu song song để 
 Bạn có thể chạy code trên một cụm các máy tính, quá trình này thông qua luồng sau đây: 
 - Dữ liệu được phân chia vào các thư mục và file. Mỗi file được chứa trong 1 blocks có kích thước cố định được xác định sẵn ( mặc định là 128MB)
 - Các tệp này được phân phối trên các nút, cụm khác nhau 
-- HDFS nằm ở trên cùm của hệ thống file cục bộ, giám sát quá trình 
+- HDFS nằm ở trên cùng của hệ thống file cục bộ, giám sát quá trình 
 - Các block được lưu các bản sao để đề phòng quá trình lỗi xảy ra trên phần cứng 
 - Kiểm tra mã được thực hiện thành công chưa
 - Thực hiện bước sort diễn ra giữa map và reduce
