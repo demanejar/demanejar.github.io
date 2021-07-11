@@ -2,7 +2,7 @@
 title: Cài đặt và triển khai Hadoop single node 
 author: trannguyenhan
 date: 2021-07-11 16:00:00 +0700
-categories: [Bigdata Route, Hadoop framework]
+categories: [Hadoop framework]
 tags: [Hadoop, Apache Hadoop, Big data, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
