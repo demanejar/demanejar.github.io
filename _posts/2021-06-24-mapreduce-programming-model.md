@@ -1,9 +1,9 @@
 ---
 title: Mô hình lập trình MapReduce cho Bigdata 
 author: trannguyenhan
-date: 2021-06-25 08:00:00 +0700
+date: 2021-06-24 08:00:00 +0700
 categories: [Hadoop framework]
-tags: [Ubuntu, Mapreduce, Bigdata, Java]
+tags: [ubuntu, mapreduce, bigdata, java]
 math: true
 mermaid: true
 ---
