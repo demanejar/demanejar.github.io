@@ -47,7 +47,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 Phân quyền cho người dùng với lệnh _**chmod** :_
 ```
-chmod 0600 ~/.ssh/authorized\_keys
+chmod 0600 ~/.ssh/authorized_keys
 ```
 
 Xác minh mọi thứ được thiết lập chính xác bằng cách ssh đến localhost: 
