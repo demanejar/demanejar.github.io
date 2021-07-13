@@ -2,7 +2,7 @@
 title: Giới thiệu tổng quan Hadoop 
 author: trannguyenhan
 date: 2021-06-29 20:52:00 +0700
-categories: [Hadoop framework]
+categories: [Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
