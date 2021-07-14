@@ -33,7 +33,7 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Flowfile repository: Chỉ lưu lại các metadata của flowfile vì flowfile lưu dữ liệu rồi.
 * Content repository: Lưu trữ dữ liệu thực đang được xử lý trong luồng. Nifi lưu lại tất cả các phiên bản dữ liệu trước và sau khi được xử lý
 * Provenance repository: Lưu lại toàn bộ lịch sử của flowfile
-* 
+
 ## Các đặc điểm nổi bật Nifi
 
 #### Khả năng quản lý nguồn dữ liệu
