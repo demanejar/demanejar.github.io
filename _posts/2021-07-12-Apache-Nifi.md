@@ -18,14 +18,17 @@ NiFi được biết đến với khả năng xây dựng luồng chuyển dữ 
 * Content: chính là dữ liệu nó đại diện
 * Attribute: thuộc tính của flow file (key-value)
 
+
 #### Flowfile processor
 Đây là 	những thứ thực hiện công việc trong nifi, bên trong nó đã có chứa sẵn code thực thi các tác vụ trong các trường hợp với input và output. Khối xử lý sinh ra các flowfile. Các processor hoạt động song song với nhau
+
 
 #### Connection
 Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó còn là một hàng đợi chứa các flowfile chưa được xử lý:
 * Xác định thời gian flowfile tồn tại trong queue
 * Phân chia flowfile đến các node trong cụm (load balancing)
 * Xác định tần suất flowfile nhả ra cho hệ thống
+
 
 ## Kiến trúc hệ thống
 ![](https://nifi.apache.org/docs/nifi-docs/html/images/zero-leader-node.png)
@@ -36,8 +39,8 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Content repository: Lưu trữ dữ liệu thực đang được xử lý trong luồng. Nifi lưu lại tất cả các phiên bản dữ liệu trước và sau khi được xử lý
 * Provenance repository: Lưu lại toàn bộ lịch sử của flowfile
 
-## Các đặc điểm nổi bật Nifi
 
+## Các đặc điểm nổi bật Nifi
 #### Khả năng quản lý nguồn dữ liệu
 * Đảm bảo tính an toàn: Mỗi đơn vị dữ liệu trong luồng sẽ được lưu dưới dạng 1 object là flowfile. Nó sẽ ghi lại thông tin về khối dữ liệu đang được xử lý ở đâu, di chuyển đi đâu... Provenance Repo được sử dụng để lưu các flowfile giúp ta có thể truy vết
 * Data Buffering: Giải quyết vấn đề tốc độ dữ liệu ghi vào nhanh hơn dữ liệu đọc giữa hai khối xử lý. Dữ liệu này sẽ được lưu ở RAM, nếu quá một ngưỡng thì sẽ được lưu xuống ổ cứng
