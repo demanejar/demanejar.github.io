@@ -24,7 +24,6 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Xác định thời gian flowfile tồn tại trong queue
 * Phân chia flowfile đến các node trong cụm (load balancing)
 * Xác định tần suất flowfile nhả ra cho hệ thống
-* 
 ## Kiến trúc hệ thống
 ![](https://nifi.apache.org/docs/nifi-docs/html/images/zero-leader-node.png)
 * Web server: cung cấp giao diện cho người dùng sử dụng các thao tác
@@ -33,7 +32,6 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Flowfile repository: Chỉ lưu lại các metadata của flowfile vì flowfile lưu dữ liệu rồi.
 * Content repository: Lưu trữ dữ liệu thực đang được xử lý trong luồng. Nifi lưu lại tất cả các phiên bản dữ liệu trước và sau khi được xử lý
 * Provenance repository: Lưu lại toàn bộ lịch sử của flowfile
-
 ## Các đặc điểm nổi bật Nifi
 
 #### Khả năng quản lý nguồn dữ liệu
