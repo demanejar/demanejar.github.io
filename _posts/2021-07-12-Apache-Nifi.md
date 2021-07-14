@@ -13,12 +13,15 @@ Apache nifi được sử dụng để tự động hóa và kiểm soát các l
 NiFi được biết đến với khả năng xây dựng luồng chuyển dữ liệu tự động giữa các hệ thống. Đặc biết là hỗ trợ rất nhiều kiểu nguồn và đích khác nhau như:hệ thống file, cơ sở dữ liệu quan hệ, phi quan hệ,... Ngoài ra Nifi sẽ hỗ trợ các thao tác với dữ liệu như lọc chỉnh sửa, thêm bớt nội dung
 ## Các thành phần chính
 ![](https://static.wixstatic.com/media/584b7d_ba693d9cf71249c3bf61b3bcfb1a4575~mv2.jpg/v1/fill/w_1599,h_776,al_c,q_90/584b7d_ba693d9cf71249c3bf61b3bcfb1a4575~mv2.webp)
+
 #### Flowfile
 Đại diện cho đơn vị dữ liệu được thực hiện trong luồng ví dụ như 1 bản ghi text, 1 file ảnh...	gồm 2 phần:
 * Content: chính là dữ liệu nó đại diện
 * Attribute: thuộc tính của flow file (key-value)
+* 
 #### Flowfile processor
 Đây là 	những thứ thực hiện công việc trong nifi, bên trong nó đã có chứa sẵn code thực thi các tác vụ trong các trường hợp với input và output. Khối xử lý sinh ra các flowfile. Các processor hoạt động song song với nhau
+
 #### Connection
 Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó còn là một hàng đợi chứa các flowfile chưa được xử lý:
 * Xác định thời gian flowfile tồn tại trong queue
@@ -33,16 +36,20 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Flowfile repository: Chỉ lưu lại các metadata của flowfile vì flowfile lưu dữ liệu rồi.
 * Content repository: Lưu trữ dữ liệu thực đang được xử lý trong luồng. Nifi lưu lại tất cả các phiên bản dữ liệu trước và sau khi được xử lý
 * Provenance repository: Lưu lại toàn bộ lịch sử của flowfile
+* 
 ## Các đặc điểm nổi bật Nifi
+
 #### Khả năng quản lý nguồn dữ liệu
 * Đảm bảo tính an toàn: Mỗi đơn vị dữ liệu trong luồng sẽ được lưu dưới dạng 1 object là flowfile. Nó sẽ ghi lại thông tin về khối dữ liệu đang được xử lý ở đâu, di chuyển đi đâu... Provenance Repo được sử dụng để lưu các flowfile giúp ta có thể truy vết
 * Data Buffering: Giải quyết vấn đề tốc độ dữ liệu ghi vào nhanh hơn dữ liệu đọc giữa hai khối xử lý. Dữ liệu này sẽ được lưu ở RAM, nếu quá một ngưỡng thì sẽ được lưu xuống ổ cứng
 * Thiết lập độ ưu tiên: Trong xử lý dữ liệu có những dữ liệu ta phải xử lý ưu tiên
 * Đánh đổi tốc độ và khả năng chịu lỗi: Nifi hỗ trợ cài đặt để cân bằng 2 yếu tố này
+
 #### Sử dụng dễ dàng
 * Nifi hỗ trợ UI cho việc xây dựng luồng dữ liệu
 * Tính tái sử dụng khi ta có thể lưu được các luồng dữ liệu thành 1 template
 * Theo dõi trực quan lịch sử
+
 #### Mở rộng theo chiều ngang
 ![](https://docs.cloudera.com/HDPDocuments/HDF3/HDF-3.0.2/bk_administration/content/figures/1/images/zero-master-cluster-http-access.png)
 
