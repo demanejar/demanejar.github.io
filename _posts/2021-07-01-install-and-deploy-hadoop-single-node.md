@@ -18,12 +18,12 @@ Hadoop mạnh mẽ và hữu dụng chỉ khi được cài đặt và khai thá
 #### Điều kiện trước khi cài : 
 
 *   Máy bạn phải có Openjdk ( bản 8, 11 hay 15 đều được), nếu chưa có thì bạn có thể cài theo câu lệnh sau : 
-```
+```bash
 sudo apt-get install openjdk-11-jdk -y
 ```
 
 *   Máy có SSH client và SSH server, nếu chưa có thì bạn có thể cài theo câu lệnh sau : 
-```
+```bash
 sudo apt-get install openssh-server openssh-client -y
 ```
 
@@ -32,7 +32,7 @@ sudo apt-get install openssh-server openssh-client -y
 Thường mình thấy một nhiều trang hướng dẫn các bạn tạo một user mới trên Ubuntu và cài Hadoop trên đó nhưng qua trải nhiệm của mình thì cài Single Node chúng ta có thể cài trên bất cứ tài khoản nào, bạn có thể cài đặt ngay trên tài khoản admin mà bạn đang dùng hiện tại.  
 
 Tạo cặp khóa SSH và xác định vị trí sẽ được lưu trữ : 
-```
+```bash
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 ```
 
@@ -41,17 +41,17 @@ Hệ thống sẽ tiến hành tạo và lưu cặp khóa SSH :
 ![](https://1.bp.blogspot.com/-SQkk3j6XsQk/YGGQGx4tzmI/AAAAAAAABTc/Im7azoBjBTcemvSNzqrPEQRf3SC2aSZJACLcBGAsYHQ/s736/Screenshot%2Bfrom%2B2021-03-29%2B15-29-40.png)
 
 Sử dụng lệnh **_cat_** để lưu **_public key_** vào **_authorized\_keys_** trong thư mục của SSH:
-```
+```bash
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
 Phân quyền cho người dùng với lệnh _**chmod** :_
-```
+```bash
 chmod 0600 ~/.ssh/authorized_keys
 ```
 
 Xác minh mọi thứ được thiết lập chính xác bằng cách ssh đến localhost: 
-```
+```bash
 ssh localhost
 ```
 
@@ -63,7 +63,7 @@ Tải về một phiên bản Hadoop trên trang phân phối chính thức củ
 Ấn vào phần **_binary_** trong **_Binary download_**
 
 Bây giờ để file nén mà bạn vừa tải về vào bất kì chỗ nào và giải nén nó ra bằng lệnh : 
-```
+```bash
 tar xvzf hadoop-3.2.2.tar.gz
 ```
 
@@ -81,7 +81,7 @@ tar xvzf hadoop-3.2.2.tar.gz
 ### Cấu hình biến môi trường Hadoop ( file .bashrc)
 
 Mở file của .bashrc của bạn bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano ~/.bashrc
 ```
 
@@ -104,7 +104,7 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ### Chỉnh sửa file hadoop-env
 
 Mở file `hadoop-env.sh` bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 ```
 
@@ -114,7 +114,7 @@ Tìm tới vị trí như hình bên dưới, bỏ comment ( bỏ dấu #) phầ
 
 ### Chỉnh sửa file core-site.xml
 Mở file core-site.xml bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
@@ -136,7 +136,7 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 ### Chỉnh sửa file hdfs-site.xml
 
 Mở file core-site.xml bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
@@ -162,7 +162,7 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 
 ### Chỉnh sửa file mapred-site.xml
 Mở file core-site.xml bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ```
 
@@ -179,7 +179,7 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 ### Chỉnh sửa file yarn-site.xml
 
 Mở file core-site.xml bằng trình soạn thảo nano : 
-```
+```bash
 sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ```
 
@@ -212,18 +212,18 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 ### Format HDFS namenode
 
 Các bạn phải định dạng lại namenode trước khi bắt đầu các dịch vụ đầu tiên : 
-```
+```bash
 hdfs namenode -format
 ```
 
 ### Start Hadoop Cluster
 Tại thư mục sbin, thực hiện các lệnh sau để chạy và khởi động Hadoop : 
-```
+```bash
 ./start-all.sh
 ```
 
 Chạy lệnh jsp để kiểm tra các trình daemon đang chạy : 
-```
+```bash
 jps
 ```
 
@@ -233,21 +233,21 @@ Nếu kết quả ra 6 trình daemon như sau thì bạn đã cấu hình đúng
 
 ### Truy cập Hadoop UI từ trình duyệt 
 Các bạn có thể kiểm tra Hadoop đã được cài đặt thành công hay chưa tại cổng mặc định của namenode là `9870` : 
-```
+```bash
 localhost:9870
 ```
 
 ![](https://1.bp.blogspot.com/-FMSuLiP0Xqw/YGIC9MUQJkI/AAAAAAAABT8/c91MvynlbMAiLMr2J-k3G6NvHPF7tDPoACLcBGAsYHQ/s1920/Screenshot%2Bfrom%2B2021-03-29%2B23-39-14.png)
 
 Kiểm tra datanode tại cổng mặc định `9864` : 
-```
+```bash
 localhost:9864
 ```
 
 ![](https://1.bp.blogspot.com/-VCxFp52-k60/YGID8DuElgI/AAAAAAAABUY/JgschX9oirkyNPQuCLGI6nexjdCbO8BvwCLcBGAsYHQ/s1919/Screenshot%2Bfrom%2B2021-03-29%2B23-44-11.png)
 
 Kiểm tra Yarn resource manager tại cổng `8088` : 
-```
+```bash
 locahost:8088
 ```
 
