@@ -24,6 +24,7 @@ Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó cò
 * Xác định thời gian flowfile tồn tại trong queue
 * Phân chia flowfile đến các node trong cụm (load balancing)
 * Xác định tần suất flowfile nhả ra cho hệ thống
+
 ## Kiến trúc hệ thống
 ![](https://nifi.apache.org/docs/nifi-docs/html/images/zero-leader-node.png)
 * Web server: cung cấp giao diện cho người dùng sử dụng các thao tác
