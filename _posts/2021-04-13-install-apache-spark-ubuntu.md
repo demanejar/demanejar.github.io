@@ -13,7 +13,7 @@ Apache Spark là một framework dùng trong xử lý dữ liệu lớn. Nền t
 <br />
 ## Cài đặt các gói cần thiết cho Spark
 Trước khi muốn cài đặt Apache Spark thì trên máy tính của bạn phải cài đặt trước các môi trường : Java, Scala, Git. Nếu chưa có, mở terminal của bạn nên và cài đặt tất cả qua câu lệnh sau : <br />
-```
+```bash
 sudo apt install default-jdk scala git -y
 ```
 Để kiểm tra xem môi trường Java và Scala đã được cài đặt trong máy của bạn chưa thì sử dụng câu lệnh : <br />
