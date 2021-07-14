@@ -13,21 +13,18 @@ Apache nifi được sử dụng để tự động hóa và kiểm soát các l
 NiFi được biết đến với khả năng xây dựng luồng chuyển dữ liệu tự động giữa các hệ thống. Đặc biết là hỗ trợ rất nhiều kiểu nguồn và đích khác nhau như:hệ thống file, cơ sở dữ liệu quan hệ, phi quan hệ,... Ngoài ra Nifi sẽ hỗ trợ các thao tác với dữ liệu như lọc chỉnh sửa, thêm bớt nội dung
 ## Các thành phần chính
 ![](https://static.wixstatic.com/media/584b7d_ba693d9cf71249c3bf61b3bcfb1a4575~mv2.jpg/v1/fill/w_1599,h_776,al_c,q_90/584b7d_ba693d9cf71249c3bf61b3bcfb1a4575~mv2.webp)
-
 #### Flowfile
 Đại diện cho đơn vị dữ liệu được thực hiện trong luồng ví dụ như 1 bản ghi text, 1 file ảnh...	gồm 2 phần:
 * Content: chính là dữ liệu nó đại diện
 * Attribute: thuộc tính của flow file (key-value)
-* 
 #### Flowfile processor
 Đây là 	những thứ thực hiện công việc trong nifi, bên trong nó đã có chứa sẵn code thực thi các tác vụ trong các trường hợp với input và output. Khối xử lý sinh ra các flowfile. Các processor hoạt động song song với nhau
-
 #### Connection
 Connection đóng vai trò kết nối giữa các processors. Ngoài ra nó còn là một hàng đợi chứa các flowfile chưa được xử lý:
 * Xác định thời gian flowfile tồn tại trong queue
 * Phân chia flowfile đến các node trong cụm (load balancing)
 * Xác định tần suất flowfile nhả ra cho hệ thống
-
+* 
 ## Kiến trúc hệ thống
 ![](https://nifi.apache.org/docs/nifi-docs/html/images/zero-leader-node.png)
 * Web server: cung cấp giao diện cho người dùng sử dụng các thao tác
