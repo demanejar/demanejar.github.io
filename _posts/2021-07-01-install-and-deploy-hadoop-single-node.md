@@ -2,7 +2,7 @@
 title: Cài đặt và triển khai Hadoop single node 
 author: trannguyenhan
 date: 2021-07-01 16:00:00 +0700
-categories: [Hadoop]
+categories: [Apache, Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
