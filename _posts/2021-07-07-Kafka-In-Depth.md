@@ -7,7 +7,7 @@ tags: [Bigdata,Data Ingestion, Apache Kafka]
 math: true
 mermaid: true
 ---
-
+*Trong quá trình làm bài tập lớn môn lưu trữ và xử lý dữ liệu lớn ở trường mình có biết đến kafka và sử dụng cho project của mình. Tuy nhiên lúc đó mình mới chỉ biết đơn giản nó là một message queue để đổ dữ liệu vào giúp việc đọc ghi từ nguồn vào đích không phụ thuộc lẫn nhau(loosely couple). Vậy nên sau đó mình có tìm hiểu các khái niệm và cách hoạt động một cách chi tiết hơn nên viết vào đây.*
 *Apache Kafka là một hệ thống được tạo ra bởi linkedin nhằm phục vụ cho việc xử lý dữ liệu theo luồng (stream process) sau đó được open-source. Ban đầu nó được nhìn nhận dưới dạng một message queue nhưng sau này được phát triển thành một nền tảng xử lý phân tán (distributed streamming platform - nhiều cái thuật ngữ dịch ra tiếng Việt khó quá !!).*
 
 ## Vấn đề trong dữ liệu lớn
