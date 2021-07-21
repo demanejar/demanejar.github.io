@@ -61,8 +61,7 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.show();
 ```
 
-Kết quả cho ra giống như hình bên dưới đây:
-
+Kết quả cho ra giống như hình bên dưới đây: <br /><br />
 ![](https://i.pinimg.com/564x/fe/3e/65/fe3e65c7d29fe7fc5fd14bfbd7fd2992.jpg)
 
 (Ví dụ này mình sẽ lấy để làm tập dữ liệu cho một số ví dụ bên dưới nha)
@@ -127,7 +126,7 @@ listOfdata.add(RowFactory.create(102,4,78,18));
 
 Kết quả sau khi tạo tập dữ liệu trên là một bảng như sau: 
 | id|day|price|units|
-|---|---|-----|-----|
+|---|---|---|---|
 |100|  1|   23|   10|
 |100|  2|   45|   11|
 |100|  3|   67|   12|
@@ -148,7 +147,7 @@ data.groupBy("id").agg(functions.collect_list("price").as("prices"), functions.c
 
 Kết quả sau khi thực hiện là: 
 | id|          prices|           units|
-|---|----------------|----------------|
+|---|---|---|
 |101|[23, 45, 67, 78]|[10, 13, 14, 15]|
 |100|[23, 45, 67, 78]|[10, 11, 12, 13]|
 |102|[23, 45, 67, 78]|[10, 11, 16, 18]|
@@ -160,7 +159,7 @@ data.groupBy("id").agg(functions.sum("price").as("prices"), functions.sum("units
 
 Kết quả cho ra là: 
 | id|prices|units|
-|---|------|-----|
+|---|---|---|
 |101|   213|   52|
 |100|   213|   46|
 |102|   213|   55|
