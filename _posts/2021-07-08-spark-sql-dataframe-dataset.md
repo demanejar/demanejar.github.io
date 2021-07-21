@@ -61,7 +61,7 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.show();
 ```
 
-Kết quả cho ra giống như hình bên dưới đây:
+Kết quả cho ra giống như hình bên dưới đây: <br />
 ![](https://i.pinimg.com/564x/fe/3e/65/fe3e65c7d29fe7fc5fd14bfbd7fd2992.jpg)
 
 (Ví dụ này mình sẽ lấy để làm tập dữ liệu cho một số ví dụ bên dưới nha)
