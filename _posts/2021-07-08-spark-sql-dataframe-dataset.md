@@ -15,15 +15,15 @@ Spark SQL được thiết kế cực kì gần gũi với các hệ quản tr�
 Chúng ta có thể truy vấn dữ dữ liệu bằng những câu truy vấn SQL cực kì quen thuộc trong MySQL hay MS SQL Server. Khi đi sâu vào ví dụ mình sẽ giải thích kĩ hơn phần này để mọi người có thể thấy rõ ràng Spark SQL dễ sử dụng như nào khi bạn là master bộ môn cơ sở dữ liệu tại trường.
 
 ## Dataframe và Dataset
-Dataframe là tập dữ liệu phân tán, có cấu trúc là một tập dữ liệu 2 chiều, hay chúng ta có thể hiểu đơn giản nó là một cái bảng tính hay là bảng trong SQL (nhưng phải là một bảng được tối ưu hóa tốt).
+**Dataframe** là tập dữ liệu phân tán, có cấu trúc là một tập dữ liệu 2 chiều, hay chúng ta có thể hiểu đơn giản nó là một cái bảng tính hay là bảng trong SQL (nhưng phải là một bảng được tối ưu hóa tốt).
 
-Dataset thì rộng hơn dataframe, chúng ta có thể nhìn vào ngôn ngữ Java để dễ hiểu hơn, khi khai báo trong Java dataframe được khai báo là `Dataset<Row>`, vậy ta hiểu đơn giản dataframe như là dataset của các hàng, còn ngoài ra dataset có thể chứa thêm nhiều kiểu dữ liệu nữa như là `Dataset<String>`, `Dataset<Integer>`. Dataset còn có thể chứa một đối tượng bất kì mà chúng ta định nghĩa ra nữa.
+**Dataset** thì rộng hơn dataframe, chúng ta có thể nhìn vào ngôn ngữ Java để dễ hiểu hơn, khi khai báo trong Java dataframe được khai báo là `Dataset<Row>`, vậy ta hiểu đơn giản dataframe như là dataset của các hàng, còn ngoài ra dataset có thể chứa thêm nhiều kiểu dữ liệu nữa như là `Dataset<String>`, `Dataset<Integer>`. Dataset còn có thể chứa một đối tượng bất kì mà chúng ta định nghĩa ra nữa.
 
 Trong bài viết này hay là sau có làm bài tập nếu có nhắc tới `Dataframe` thì chúng ta hãy hiểu ngầm rằng đó chính là `Dataset<Row>` và ngược lại nha.
 
 Giống với RDD, Dataset cũng có các phép biến đổi như `map`, `flatmap`, `filter`,...
 
-Riêng ý kiến của mình về việc sử dụng ngôn ngữ nào thì mình cho rằng, mặc dù khi sử dụng Java bạn sẽ phải viết code dài hơn các ngôn ngữ khác như Scala hay Python. Tuy nhiên bạn sẽ hiểu được chi tiết từng câu lệnh mà bạn viết ra, thậm chí sau 1-2 tháng bạn đọc lại bạn vẫn có thể hình dung ra code của bạn đang viết gì vì Java viết code rất có quy tắc, các kiểu dữ liệu đều được khai báo, định nghĩa rõ ràng. Tất nhiên là mỗi người thì có một cách nhìn khác nhau và lựa chọn của riêng mình, và dù là sử dụng ngôn ngữ nào trong Spark đi nữa thì về cơ bản đều giống nhau mà thôi, mỗi bước trong ngôn ngữ này hoàn toàn có thể chuyển qua mỗi bước trong ngôn ngữ khác.
+**Riêng ý kiến của mình về việc sử dụng ngôn ngữ nào thì mình cho rằng**, mặc dù khi sử dụng Java bạn sẽ phải viết code dài hơn các ngôn ngữ khác như Scala hay Python. Tuy nhiên bạn sẽ hiểu được chi tiết từng câu lệnh mà bạn viết ra, thậm chí sau 1-2 tháng bạn đọc lại bạn vẫn có thể hình dung ra code của bạn đang viết gì vì Java viết code rất có quy tắc, các kiểu dữ liệu đều được khai báo, định nghĩa rõ ràng. Tất nhiên là mỗi người thì có một cách nhìn khác nhau và lựa chọn của riêng mình, và dù là sử dụng ngôn ngữ nào trong Spark đi nữa thì về cơ bản đều giống nhau mà thôi, mỗi bước trong ngôn ngữ này hoàn toàn có thể chuyển qua mỗi bước trong ngôn ngữ khác.
 
 ## Spark DataFrames Operations
 Dĩ nhiên dataframe là chúng ta sẽ sử dụng chủ yếu vì thế nên đôi lúc dataframe sẽ chiếm nhiều phần hơn trong bài viết này của mình. Dataset như là một phần mở rộng của dataframe tuy nhiên nó được sử dụng như là trung gian để chuyển đổi mà thôi. 
@@ -61,9 +61,23 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.show();
 ```
 
-Kết quả cho ra giống như hình bên dưới đây:<br /><br />
-![](https://i.pinimg.com/564x/fe/3e/65/fe3e65c7d29fe7fc5fd14bfbd7fd2992.jpg){.right}
-<br />
+Kết quả cho ra giống như bên dưới đây:
+```bash
++--------+------+---+------------+
+|Employee|Salary|stt|Salary_count|
++--------+------+---+------------+
+|  George|    80| 10|          10|
+|   Steve|    65|  9|          10|
+|   Nigel|    64|  8|          10|
+|   Micky|    62|  7|          10|
+|     Lee|    60|  6|          10|
+|    Tony|    50|  5|          10|
+|    Paul|    48|  4|          10|
+|    Alan|    45|  3|          10|
+|    John|    42|  2|          10|
+|   David|    35|  1|          10|
++--------+------+---+------------+
+```
 
 (Ví dụ này mình sẽ lấy để làm tập dữ liệu cho một số ví dụ bên dưới nha)
 
@@ -74,9 +88,14 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.printSchema();
 ```
 
-Kết quả cho ra sẽ giống như hình bên dưới đây: 
-
-![](https://i.pinimg.com/564x/d1/2d/21/d12d21c2dca9d627bfed16c0a4d80eb6.jpg)
+Kết quả cho ra sẽ giống như bên dưới đây: 
+```bash
+root
+ |-- Employee: string (nullable = true)
+ |-- Salary: integer (nullable = true)
+ |-- stt: integer (nullable = true)
+ |-- Salary_count: long (nullable = false)
+```
 
 ### select
 `select` giúp lấy ra các cột theo ý muốn khi mà chúng ta không muốn in hết toàn bộ dữ liệu của dataframe.
@@ -85,9 +104,23 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.select("Employee", "Salary").show();
 ```
 
-Ví dụ trên lấy ra và hiển thị 2 hàng "Employee" và "Salary", kết quả sẽ cho ra giống hình bên dưới: 
-
-![](https://i.pinimg.com/564x/be/e3/15/bee315ffc0eb141f134045b31e01cb4b.jpg)
+Ví dụ trên lấy ra và hiển thị 2 hàng "Employee" và "Salary", kết quả sẽ cho ra giống như bên dưới đây: 
+```bash
++--------+------+
+|Employee|Salary|
++--------+------+
+|  George|    80|
+|   Steve|    65|
+|   Nigel|    64|
+|   Micky|    62|
+|     Lee|    60|
+|    Tony|    50|
+|    Paul|    48|
+|    Alan|    45|
+|    John|    42|
+|   David|    35|
++--------+------+
+```
 
 ### filter
 Giống với `select` tuy nhiên ta có thể hiểu là `select` là lọc cột còn `filter` là lọc hàng.
@@ -96,9 +129,17 @@ Dataset<Row> data = spark.read().csv("resources/input.csv");
 data.filter(data.col("Salary").$greater(60)).show();
 ```
 
-Ví dụ trên lọc ra các hàng mà có cột "Salary" có giá trị lớn hơn 60, kết quả cho ra sẽ giống hình bên dưới: 
-
-![](https://i.pinimg.com/564x/40/ad/f5/40adf59aefe089b631a2acaad02d9e9f.jpg)
+Ví dụ trên lọc ra các hàng mà có cột "Salary" có giá trị lớn hơn 60, kết quả cho ra sẽ giống như bên dưới đây: 
+```bash
++--------+------+---+------------+
+|Employee|Salary|stt|Salary_count|
++--------+------+---+------------+
+|  George|    80| 10|          10|
+|   Steve|    65|  9|          10|
+|   Nigel|    64|  8|          10|
+|   Micky|    62|  7|          10|
++--------+------+---+------------+
+```
 
 ### groupBy
 `groupBy` sẽ giúp nhóm lại các hàng mà có cùng giá trị cần nhóm và có thể thực hiện tính toán trên các giá trị mà chúng ta nhóm lại.
@@ -127,20 +168,20 @@ listOfdata.add(RowFactory.create(102,4,78,18));
 
 Kết quả sau khi tạo tập dữ liệu trên là một bảng như sau: 
 
-| id | day | price | units |
-| --- | --- | --- | --- |
-| 100 |  1 |   23 |   10 |
-| 100 |  2 |   45 |   11 |
-| 100 |  3 |   67 |   12 |
-| 100 |  4 |   78 |   13 |
-| 101 |  1 |   23 |   10 |
-| 101 |  2 |   45 |   13 |
-| 101 |  3 |   67 |   14 |
-| 101 |  4 |   78 |   15 |
-| 102 |  1 |   23 |   10 |
-| 102 |  2 |   45 |   11 |
-| 102 |  3 |   67 |   16 |
-| 102 |  4 |   78 |   18 |
+| id|day|price|units|
+|---|---|-----|-----|
+|100|  1|   23|   10|
+|100|  2|   45|   11|
+|100|  3|   67|   12|
+|100|  4|   78|   13|
+|101|  1|   23|   10|
+|101|  2|   45|   13|
+|101|  3|   67|   14|
+|101|  4|   78|   15|
+|102|  1|   23|   10|
+|102|  2|   45|   11|
+|102|  3|   67|   16|
+|102|  4|   78|   18|
 
 Nhiệm vụ của chúng ta bây giờ là nhóm lại các hàng có id giống nhau sử dụng groupBy như sau: 
 ```java
@@ -148,12 +189,15 @@ data.groupBy("id").agg(functions.collect_list("price").as("prices"), functions.c
 ```
 
 Kết quả sau khi thực hiện là: 
-
+```bash
++---+----------------+----------------+
 | id|          prices|           units|
-|---|---|---|
++---+----------------+----------------+
 |101|[23, 45, 67, 78]|[10, 13, 14, 15]|
 |100|[23, 45, 67, 78]|[10, 11, 12, 13]|
 |102|[23, 45, 67, 78]|[10, 11, 16, 18]|
++---+----------------+----------------+
+```
 
 Chúng ta cũng có thể thực hiện tính tổng hay tính trung bình, tìm min, tìm max bằng cách thay collect_list bằng sum, min, max,... như dưới đây: 
 ```java
@@ -161,12 +205,15 @@ data.groupBy("id").agg(functions.sum("price").as("prices"), functions.sum("units
 ```
 
 Kết quả cho ra là: 
-
+```bash
++---+------+-----+
 | id|prices|units|
-|---|---|---|
++---+------+-----+
 |101|   213|   52|
 |100|   213|   46|
 |102|   213|   55|
++---+------+-----+
+```
 
 
 ## Truy vấn bằng các câu lệnh SQL
@@ -189,7 +236,18 @@ Như phần đầu thì mình có nói là chúng ta có thể chuyển sang b�
 
 Chúng ta sẽ sử dụng lại tập dữ liệu bên trên: 
 
-![](https://i.pinimg.com/564x/fe/3e/65/fe3e65c7d29fe7fc5fd14bfbd7fd2992.jpg)
+|Employee|Salary|stt|Salary_count|
+|--------|------|---|------------|
+|  George|    80| 10|          10|
+|   Steve|    65|  9|          10|
+|   Nigel|    64|  8|          10|
+|   Micky|    62|  7|          10|
+|     Lee|    60|  6|          10|
+|    Tony|    50|  5|          10|
+|    Paul|    48|  4|          10|
+|    Alan|    45|  3|          10|
+|    John|    42|  2|          10|
+|   David|    35|  1|          10|
 
 Bây giờ mình sẽ nhóm lại tập dữ liệu trên thành một thông tin dạng `[Employee] : [Salary]` như sau: 
 ```java
@@ -205,9 +263,22 @@ data.map(new MapFunction<Row, String>() {
 ```
 
 Kết quả thu được là: 
-
-![](https://i.pinimg.com/564x/cb/b7/92/cbb7924bd7886bb9d3f50c6540aa5b69.jpg)
-
+```bash
++-----------+
+|      value|
++-----------+
+|George : 80|
+| Steve : 65|
+| Nigel : 64|
+| Micky : 62|
+|   Lee : 60|
+|  Tony : 50|
+|  Paul : 48|
+|  Alan : 45|
+|  John : 42|
+| David : 35|
++-----------+
+```
 
 
 Tham khảo: [https://spark.apache.org/](https://spark.apache.org/docs/2.3.0/sql-programming-guide.html)
