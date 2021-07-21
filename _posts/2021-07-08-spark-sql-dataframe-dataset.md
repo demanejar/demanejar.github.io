@@ -125,6 +125,7 @@ listOfdata.add(RowFactory.create(102,4,78,18));
 ```
 
 Kết quả sau khi tạo tập dữ liệu trên là một bảng như sau: 
+
 | id | day | price | units |
 | --- | --- | --- | --- |
 | 100 |  1 |   23 |   10 |
@@ -146,6 +147,7 @@ data.groupBy("id").agg(functions.collect_list("price").as("prices"), functions.c
 ```
 
 Kết quả sau khi thực hiện là: 
+
 | id|          prices|           units|
 |---|---|---|
 |101|[23, 45, 67, 78]|[10, 13, 14, 15]|
@@ -158,6 +160,7 @@ data.groupBy("id").agg(functions.sum("price").as("prices"), functions.sum("units
 ```
 
 Kết quả cho ra là: 
+
 | id|prices|units|
 |---|---|---|
 |101|   213|   52|
