@@ -6,6 +6,8 @@ categories: [Apache, Spark]
 tags: [Spark SQL, Bigdata, Spark]
 math: true
 mermaid: true
+image:
+  src: https://i.pinimg.com/originals/50/64/13/5064132e69821108d0c4fff3c6afd9ce.jpg
 ---
 *Spark SQL là một mô hình để xử lý dữ liệu có cấu trúc của Spark rất phổ biến. Interfaces cung cấp bởi Spark SQL có thêm các thông tin về cấu trúc của dữ liệu và các tính toán đang được thực hiện. Với những thông tin bổ sung này Spark SQL có thể thực hiện các tối ưu hóa bổ sung*
 
