@@ -48,7 +48,7 @@ layout: default
           <script>
             let meta_tag = document.createElement("meta");
             meta_tag.setAttribute("property", "og:image");
-            meta_tag.setAttribute("content", " {{ page.image.src }} ");
+            meta_tag.setAttribute("content", "{{ page.image.src }}");
             document.head.appendChild(meta_tag)
           </script>
         {% endif %}
