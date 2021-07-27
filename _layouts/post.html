@@ -45,12 +45,6 @@ layout: default
 
         {% if page.image.src %}
           <img src="{{ page.image.src }}" class="preview-img" alt="{{ page.image.alt | default: "Preview Image" }}">
-          <script>
-            let meta_tag = document.createElement("meta");
-            meta_tag.setAttribute("property", "og:image");
-            meta_tag.setAttribute("content", "{{ page.image.src }}");
-            document.head.appendChild(meta_tag)
-          </script>
         {% endif %}
 
         {{ content }}
