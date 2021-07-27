@@ -5,6 +5,10 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% if page.image.src %}
+    <meta property="og:image" content="{{ page.image.src }}">
+  {% endif %}
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TR0K3B846"></script>
   <script>
