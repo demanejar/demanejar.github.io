@@ -7,8 +7,9 @@ tags: [Spark, Apache Spark, Bigdata, Ubuntu]
 math: true
 mermaid: true
 image:
-  src: https://images.viblo.asia/85f587d7-c39c-477a-af2d-37f5b2cd7923.png
+  src: 
 ---
+![](https://images.viblo.asia/85f587d7-c39c-477a-af2d-37f5b2cd7923.png)
 
 *Apache Spark là một framework dùng trong xử lý dữ liệu lớn. Nền tảng này trở nên phổ biến rộng rãi do dễ sử dụng và tốc độ xử lý dữ liệu được cải thiện hơn Hadoop. Apache Spark có thể phân phối khối lượng công việc trên một nhóm máy tính trong một cụm để xử lý hiệu quả hơn các tập hợp dữ liệu lớn. Công cụ mã nguồn mở này hỗ trợ nhiều ngôn ngữ lập trìnhnhư là : Java, Scala, Python và R. Trong bài viết này mình sẽ chia sẻ cách để cài đặt và cấu hình Apache Spark trên Ubuntu.*
 
