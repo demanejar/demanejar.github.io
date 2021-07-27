@@ -6,6 +6,8 @@ categories: [Apache, Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
+image:
+  src: https://i.pinimg.com/originals/4a/3c/14/4a3c144fa89a85fd6dbccc07bdb8509a.jpg
 ---
 
 *Hadoop là frameword dựa trên 1 giải pháp tới từ Google để lưu trữ và xử lý dữ liệu lớn. Hadoop sử dụng giải thuật MapReduce xử lý song song các dữ liệu đầu vào. Tóm lại, Hadoop được sử dụng để phát triển các ứng dụng có thể thực hiện phân tích thống kê hoàn chỉnh trên dữ liệu số lượng lớn.*
@@ -19,10 +21,6 @@ Hadoop gồm 2 tầng chính:
 Ngoài 2 thành phần được đề cập ở trên thì Hadoop framework cũng gồm 2 mô-đun sau: 
 - Hadoop Common: là các thư viện, tiện ích viết bằng ngôn ngữ Java
 - Hadoop Yarn: lập lịch và quản lý các tài nguyên
-
-
-![](https://i.pinimg.com/564x/4a/3c/14/4a3c144fa89a85fd6dbccc07bdb8509a.jpg)
-
 
 ## Hadoop làm việc như thế nào?
 Hadoop giải quyết vấn đề nếu như bạn hay công ty của bạn không đủ điều kiện để xây dựng các máy chủ siêu mạnh thì chúng ta có thể kết hợp nhiều các máy tính thương mại lại để mang lại một cụm máy có khả năng xử lý một lượng dữ liệu lớn.
