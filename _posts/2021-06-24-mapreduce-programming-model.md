@@ -7,7 +7,7 @@ tags: [Ubuntu, mapreduce, Bigdata, Java]
 math: true
 mermaid: true
 image:
-  src: https://i.pinimg.com/originals/f1/0d/5e/f10d5e44a4ca634da705b02414c8a910.jpg
+  src: https://i.pinimg.com/originals/24/b3/8d/24b38d9f8ea2a4bddb32c1c95d290378.jpg
 ---
 *MapReduce là một kỹ thuật xử lý và là một mô hình lập trình cho tính toán phân tán để triển khai và xử lý dữ liệu lớn. MapReduce chứa 2 tác vụ quan trọng là map và reduce, trong đó hàm map xử lý các cặp key/value đầu vào cho ra kết quả là các cặp key/value trung gian, và hàm reduce lấy kết quả là đầu ra của tác vụ map và kết hợp bộ dữ liệu đó thành kết quả mong muốn đầu ra. WordCount là một ví dụ điển hình cho MapReduce mà sẽ được mình minh họa trong bài viết này*
 
