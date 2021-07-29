@@ -22,6 +22,8 @@ Ngoài 2 thành phần được đề cập ở trên thì Hadoop framework cũn
 - Hadoop Common: là các thư viện, tiện ích viết bằng ngôn ngữ Java
 - Hadoop Yarn: lập lịch và quản lý các tài nguyên
 
+![](https://i.pinimg.com/originals/4a/3c/14/4a3c144fa89a85fd6dbccc07bdb8509a.jpg)
+
 ## Hadoop làm việc như thế nào?
 Hadoop giải quyết vấn đề nếu như bạn hay công ty của bạn không đủ điều kiện để xây dựng các máy chủ siêu mạnh thì chúng ta có thể kết hợp nhiều các máy tính thương mại lại để mang lại một cụm máy có khả năng xử lý một lượng dữ liệu lớn.
 Các máy trong cụm có thể đọc và xử lý dữ liệu song song để mang lại những hiệu quả cao.
