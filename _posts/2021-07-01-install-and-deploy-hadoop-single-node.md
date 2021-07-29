@@ -6,6 +6,8 @@ categories: [Apache, Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
+image:
+  src: https://i.pinimg.com/originals/4a/3c/14/4a3c144fa89a85fd6dbccc07bdb8509a.jpg
 ---
 *Mỗi ngành công nghiệp lớn đang triển khai Apache Hadoop là khung tiêu chuẩn để xử lý và lưu trữ dữ liệu lớn. Hadoop được thiết kế để được triển khai trên một mạng lưới hàng trăm hoặc thậm chí hàng ngàn máy chủ chuyên dụng. Tất cả các máy này làm việc cùng nhau để đối phó với khối lượng lớn và nhiều bộ dữ liệu khổng lồ*
 
