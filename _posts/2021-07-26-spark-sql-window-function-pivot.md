@@ -6,6 +6,8 @@ categories: [Apache, Spark]
 tags: [Spark SQL, Bigdata, Spark, pivot spark, window function]
 math: true
 mermaid: true
+image:
+  src: https://i.pinimg.com/originals/cc/38/cd/cc38cddba42b235e5e23638e9473b7d8.jpg
 ---
 *Window aggregate functions (hay thường được gọi tắt là window functions hoặc windowed aggregates) là hàm giúp hỗ trợ tính toán trên 1 nhóm các bản ghi được gọi là cửa sổ mà có liên quan tới bản ghi hiện tại.*
 
