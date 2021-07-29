@@ -1,7 +1,7 @@
 ---
 title: Window function, pivot trong Spark SQL
 author: trannguyenhan 
-date: 2021-07-26 08:52:00 +0700
+date: 2021-07-20 08:52:00 +0700
 categories: [Apache, Spark]
 tags: [Spark SQL, Bigdata, Spark, pivot spark, window function]
 math: true
