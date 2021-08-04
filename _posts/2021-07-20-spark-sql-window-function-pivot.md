@@ -201,8 +201,8 @@ Nhìn vào yêu cầu output chúng ta sẽ thấy là sẽ có 2 yêu cầu rõ
 Dataset<Row> result_1 = data.withColumn("concat_day", functions.concat(functions.lit("price_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("price"));
 ```
-- `functions.concat()` giúp tạo ra tên mới cho hàng là _price_ cộng với đuôi giá trị _day_ 
-- `pivot` giúp xoay ngang lại bảng dữ liệu ban đầu của chúng ta
+- `functions.concat()` giúp tạo ra các giá trị cho cột mới là _price_ cộng với đuôi là giá trị _day_ 
+- `pivot` giúp xoay ngang lại bảng dữ liệu ban đầu với cột xoay là cột vừa mới tạo _concat_day_
 
 Kết quả của bước đầu tiên sẽ là: 
 ```bash
@@ -215,7 +215,7 @@ Kết quả của bước đầu tiên sẽ là:
 +---+-------+-------+-------+-------+
 ```
 
-Tương tự ta xoay ngang dữ liệu ban đầu theo cột _unit_ ở ***bước 2*** như sau: 
+Tương tự ta  xoay ngang dữ liệu ban đầu theo cột _unit_ ở ***bước 2*** như sau: 
 ```java
 Dataset<Row> result_2 = data.withColumn("concat_day", functions.concat(functions.lit("unit_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("units"));
@@ -317,7 +317,7 @@ public class Main {
 ```
 
 - `partitionBy` chia tách dữ liệu ban đầu ra theo _partition_
-- `rowsBetween(Window.unboundedPreceding(), Window.currentRow())` giới hạn lại cửa sổ là từ đầu cho tới vị trí hiện tại
+- `rowsBetween(Window.unboundedPreceding(), Window.currentRow())` giới hạn lại không gian của cửa sổ là từ đầu cho tới vị trí hiện tại
 - `functions.sum("items_sold").over(wins)` là giá trị của cột `running_total` được tạo bằng tổng của cột _items_sold_ giới hạn trong cửa sổ `wins`
 
 Kết quả cuối cùng của ví dụ 4 sẽ là: 
