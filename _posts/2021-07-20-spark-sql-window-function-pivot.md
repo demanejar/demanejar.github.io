@@ -23,9 +23,23 @@ id,name,population
 2,Vranje,83 524
 3,Pittsburgh,1 775 634
 ```
-_Yêu cầu_: 
 -   Load dữ liệu từ csv file
 -   Query population lớn nhất
+
+INPUT: 
+
+| id|             name|population|
+|---|-----------------|----------|
+|  0|           Warsaw| 1 764 615|
+|  1|Villeneuve-Loubet|    15 020|
+|  2|           Vranje|    83 524|
+|  3|       Pittsburgh| 1 775 634|
+
+OUTPUT: 
+
+|population|
+|----------|
+|   1775634|
 
 ### Lời giải 
 Bài này mang tính chất khởi động thôi chứ chưa hề động gì tới _window function_ hay _pivot_ cả, mọi người làm như bình thường: 
@@ -182,12 +196,12 @@ listOfdata.add(RowFactory.create(102,3,67,16));
 listOfdata.add(RowFactory.create(102,4,78,18));
 ```
 
-Nhìn vào yêu cầu output chúng ta sẽ thấy là sẽ có 2 yêu cầu rõ rệt là sẽ chia _price_ ra trước sau đó là chia _unit_. Vậy chúng ta cũng sẽ làm từng bước một, ***đầu tiên*** là chia _price_ theo _id_ như sau: 
+Nhìn vào yêu cầu output chúng ta sẽ thấy là sẽ có 2 yêu cầu rõ rệt là sẽ xoay ngang cột _price_ và cột _unit_. Vậy chúng ta cũng sẽ làm từng bước một, ***đầu tiên*** là xoay ngang cột _price_ ra trước như sau: 
 ```java
 Dataset<Row> result_1 = data.withColumn("concat_day", functions.concat(functions.lit("price_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("price"));
 ```
-- `functions.concat()` giúp tạo ra tên mới cho hàng là _price__ cộng với đuôi giá trị _day_ 
+- `functions.concat()` giúp tạo ra tên mới cho hàng là _price_ cộng với đuôi giá trị _day_ 
 - `pivot` giúp xoay ngang lại bảng dữ liệu ban đầu của chúng ta
 
 Kết quả của bước đầu tiên sẽ là: 
@@ -201,7 +215,7 @@ Kết quả của bước đầu tiên sẽ là:
 +---+-------+-------+-------+-------+
 ```
 
-Tương tự ta nhóm lại dữ liệu đầu bài theo _unit_ ở ***bước 2*** như sau: 
+Tương tự ta xoay ngang dữ liệu ban đầu theo cột _unit_ ở ***bước 2*** như sau: 
 ```java
 Dataset<Row> result_2 = data.withColumn("concat_day", functions.concat(functions.lit("unit_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("units"));
@@ -324,4 +338,4 @@ Kết quả cuối cùng của ví dụ 4 sẽ là:
 +----+----------+----------+-------------+
 ```
 
-Còn 1 số ví dụ nữa có lẽ mình sẽ viết trong phần 2 nha vì bài này cũng khá là dài rồi. Xem tiếp phần 2 [TẠI ĐÂY](#)
+Còn 1 số ví dụ nữa có lẽ mình sẽ viết trong phần 2 nha vì bài này cũng khá là dài rồi. Xem tiếp phần 2 [TẠI ĐÂY](https://demanejar.github.io/posts/spark-sql-window-function-pivot-part-2/)
