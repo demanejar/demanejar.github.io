@@ -20,7 +20,10 @@ title: De Manejar                          # the main title
 tagline: Hello world !   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Một website nhỏ về bigdata được viết bởi team Demanejar. (c) Copyright Demanejar.
+  (c) Copyright Demanejar. 
+  Một website nhỏ về bigdata 
+  được viết bởi team Demanejar.
+  
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://demanejar.github.io'
 
