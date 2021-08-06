@@ -1,7 +1,7 @@
 {
   "name": "jekyll-theme-chirpy",
   "version": "3.3.2",
-  "description": "A minimal, sidebar, responsive web design Jekyll theme that focuses on text presentation.",
+  "description": "(c) Copyright Demanejar. Một blog về Bigdata được viết bởi team Demanejar.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
