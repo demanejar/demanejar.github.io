@@ -17,7 +17,7 @@ timezone: Asia/Ho_Chi_Minh
 # --------------------------
 title: De Manejar                          # the main title
 
-tagline: Hello bigdata !   # it will display as the sub-title
+tagline: Hello Bigdata !   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   (c) Copyright Demanejar. 
