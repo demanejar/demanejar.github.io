@@ -55,7 +55,7 @@ Vậy nên cơ chế này sẽ khiến các mô hình lập trình đa luồng k
 # 3. Thử nghiệm đánh giá các mô hình
 Chạy chương trình python dưới đây bao gồm 2 hàm là IO-bound và CPU-bound thực hiện tác vụ tương ứng với tên hàm
 
-```Python
+```python
 import time, os
 from threading import Thread, current_thread
 from multiprocessing import Process, current_process
@@ -103,14 +103,14 @@ if __name__=="__main__":
 ## Thử nghiệm mô hình với các tác vụ IO-bound
 Gọi 2 lần hàm io_bound() 
 
-```Python
+```python
 io_bound(SLEEP)
 io_bound(SLEEP)
 ```
 
 Chương trình sẽ có thời gian chạy hơn 20s với 20s là sleep thực hiện tuần tự. Kết quả như dưới đây:
 
-```Bash
+```bash
 18795 * MainProcess * MainThread         ---> Start sleeping...
 18795 * MainProcess * MainThread         ---> Finished sleeping...
 18795 * MainProcess * MainThread         ---> Start sleeping...
@@ -121,7 +121,7 @@ Time taken in seconds - 20.015657424926758
 ### Đa luồng
 Ở đây mình sử dụng 2 luồng để tăng tốc việc xử lý. 2 luồng đều hoàn thành công việc trong 10s đồng thời và việc này giảm 50% thời gian thực thi chương trình
 
-```Python
+```python
 t1 = Thread(target = io_bound, args =(SLEEP, ))
 
 t2 = Thread(target = io_bound, args =(SLEEP, ))
@@ -138,7 +138,7 @@ t2.join()
 
 Kết quả:
 
-```Bash
+```bash
 19327 * MainProcess * Thread-1         ---> Start sleeping...
 19327 * MainProcess * Thread-2         ---> Start sleeping...
 19327 * MainProcess * Thread-2         ---> Finished sleeping...
@@ -150,7 +150,7 @@ Time taken in seconds - 10.010849714279175
 
 Trong trường hợp này mình sẽ tạo ra 2 tiến trình thực hiện song song hàm io_bound() trên và kết quả cũng tương tự phần đa luồng
 
-```Python
+```python
 p1 = Process(target = io_bound, args =(SLEEP, ))
 
 p2 = Process(target = io_bound, args =(SLEEP, ))
@@ -164,7 +164,7 @@ p1.join()
 p2.join()
 ```
 
-```Bash
+```bash
 19967 * Process-1 * MainThread         ---> Start sleeping...
 19968 * Process-2 * MainThread         ---> Start sleeping...
 19967 * Process-1 * MainThread         ---> Finished sleeping...
@@ -182,7 +182,7 @@ cpu_bound(COUNT)
 
 Kết quả của việc thực hiện tuần tự
 
-```Bash
+```bash
 20153 * MainProcess * MainThread         ---> Start counting...
 20153 * MainProcess * MainThread         ---> Finished counting...
 20153 * MainProcess * MainThread         ---> Start counting...
@@ -193,7 +193,7 @@ Time taken in seconds - 20.83522891998291
 ### Đa luồng 
 Mình sẽ thử thực hiện chương trình trên với hai luồng để kiểm tra xem đối với các công việc cpu-bound thì liệu việc đa luồng trong Python có được cải thiện hay không
 
-```Python
+```python
 t1 = Thread(target = cpu_bound, args =(COUNT, ))
 
 t2 = Thread(target = cpu_bound, args =(COUNT, ))
@@ -221,7 +221,7 @@ Time taken in seconds - 20.36056351661682
 
 Đối với trường hợp đa tiến trình mình cũng sẽ thử nghiệm tương tự
 
-```Python
+```python
 p1 = Process(target = cpu_bound, args =(COUNT, ))
 
 p2 = Process(target = cpu_bound, args =(COUNT, ))
@@ -239,7 +239,7 @@ end = time.time()
 
 Ở đây kết quả đã được cải thiện đáng kể, tốc độ thực thi giảm gần 50%. Tiến trình chính chia thành 2 tiến trình con chạy song song trên các core CPU. Mỗi tiến trình có một luồng chính riêng là MainThread
 
-```Bash
+```bash
 20556 * Process-1 * MainThread         ---> Start counting...
 20557 * Process-2 * MainThread         ---> Start counting...
 20557 * Process-2 * MainThread         ---> Finished counting...
