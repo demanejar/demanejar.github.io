@@ -1,8 +1,9 @@
+
 ---
 title: Cài đặt và triển khai Hadoop single node 
 author: trannguyenhan
 date: 2021-07-01 16:00:00 +0700
-categories: [Apache, Hadoop]
+categories: [Hadoop & Spark]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
@@ -19,7 +20,7 @@ Hadoop mạnh mẽ và hữu dụng chỉ khi được cài đặt và khai thá
 
 #### Điều kiện trước khi cài : 
 
-*   Máy bạn phải có Openjdk ( bản 8, 11 hay 15 đều được), nếu chưa có thì bạn có thể cài theo câu lệnh sau : 
+*   Máy bạn phải có jdk ( bản 8, 11 hay 15 đều được, lưu ý nếu bạn dùng hadoop 3.1.4 thì có thể dùng bản jdk8, còn nếu dùng hadoop 3.2.2 trở lên thì hãy sử dụng java11 trở lên), nếu chưa có thì bạn có thể cài theo câu lệnh sau : 
 ```bash
 sudo apt-get install openjdk-11-jdk -y
 ```
@@ -72,14 +73,15 @@ tar xvzf hadoop-3.2.2.tar.gz
   
 
 ## Cấu hình và triển khai Hadoop Single Node (Pseudo-Distributed Mode)
-Để cấu hình Hadoop cho chế độ phân phối giả chúng ta sẽ chỉnh sửa các tập file cấu hình của Hadoop trong đường dẫn **_etc/hadoop_** và trong file cấu hình môi trường gồm các file sau : 
-*   .bashrc
+Để cấu hình Hadoop cho chế độ phân phối giả chúng ta sẽ chỉnh sửa các tập file cấu hình của Hadoop trong đường dẫn **_etc/hadoop_** và trong **_file cấu hình môi trường_** gồm các file sau : 
+*   `.bashrc`
 *   `hadoop-env.sh`
-*   core-site.xml
-*   hdfs-site.xml
-*   mapred-site.xml
-*   yarn-site.xml
+*   `core-site.xml`
+*   `hdfs-site.xml`
+*   `mapred-site.xml`
+*   `yarn-site.xml`
 
+**_Lưu ý_**: Trong phần cài đặt dưới đây, Hadoop của mình được đặt trong thư mục `/opt/myapp`, các bạn có thể để Hadoop ở bất cứ đâu cũng được, không nhất thiết phải để giống như mình. 
 ### Cấu hình biến môi trường Hadoop ( file .bashrc)
 
 Mở file của .bashrc của bạn bằng trình soạn thảo nano : 
@@ -110,17 +112,17 @@ Mở file `hadoop-env.sh` bằng trình soạn thảo nano :
 sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 ```
 
-Tìm tới vị trí như hình bên dưới, bỏ comment ( bỏ dấu #) phần **JAVA\_HOME** và thêm vào đầy đủ đường dẫn Openjdk trên máy của bạn : 
+Tìm tới vị trí như hình bên dưới, bỏ comment ( bỏ dấu #) phần **JAVA\_HOME** và thêm vào đầy đủ đường dẫn openjdk trên máy của bạn : 
 
 ![](https://1.bp.blogspot.com/-bg35_Vkla3Y/YGH580alUaI/AAAAAAAABTs/hxsC-I7e6_ohlQHyiXVZyE0DktKa28UWgCPcBGAYYCw/s736/Screenshot%2Bfrom%2B2021-03-29%2B23-01-30.png)
 
 ### Chỉnh sửa file core-site.xml
-Mở file core-site.xml bằng trình soạn thảo nano : 
+Mở file `core-site.xml` bằng trình soạn thảo nano : 
 ```bash
 sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ như sau : 
+Thêm vào giữa 2 thẻ `configuration` để được nội dung đầy đủ như sau : 
 ```
 <configuration>
 <property>
@@ -129,7 +131,7 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 </property>
 <property> 
 	<name>fs.default.name</name> 
-	<value>hdfs://localhost:9001</value>
+	<value>hdfs://localhost:9000</value>
 </property>
 </configuration>
 ```
@@ -137,17 +139,17 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 
 ### Chỉnh sửa file hdfs-site.xml
 
-Mở file core-site.xml bằng trình soạn thảo nano : 
+Mở file `hdfs-site.xml` bằng trình soạn thảo nano : 
 ```bash
-sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
+sudo nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 ```
 
-Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ như sau : 
+Thêm vào giữa 2 thẻ `configuration` để được nội dung đầy đủ như sau : 
 ```
 <configuration>
 <property>
 	<name>dfs.data.dir</name> 
-	<value>/opt/myapp/hadoop-3.2.2/namenode</value>
+	<value>/opt/myapp/hadoop-3.2.2/dfsdata/namenode</value>
 </property>
 <property>
 	<name>dfs.data.dir</name>
@@ -163,12 +165,12 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 `dfs.replication` cấu hình số bản sao, thường thì 3 là con số thường được chọn tuy nhiên khi cài single node chỉ mang tính chất học là chủ yếu thì bạn để bao nhiêu cũng được.
 
 ### Chỉnh sửa file mapred-site.xml
-Mở file core-site.xml bằng trình soạn thảo nano : 
+Mở file `mapred-site.xml` bằng trình soạn thảo nano : 
 ```bash
 sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ```
 
-Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ như sau : 
+Thêm vào giữa 2 thẻ `configuration` để được nội dung đầy đủ như sau : 
 ```
 <configuration>
 <property>
@@ -180,7 +182,7 @@ Thêm vào giữa 2 thẻ configuration để được nội dung đầy đủ n
 
 ### Chỉnh sửa file yarn-site.xml
 
-Mở file core-site.xml bằng trình soạn thảo nano : 
+Mở file `yarn-site.xml` bằng trình soạn thảo nano : 
 ```bash
 sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ```
