@@ -1,4 +1,3 @@
-
 ---
 title: Cài đặt và triển khai Hadoop single node 
 author: trannguyenhan
