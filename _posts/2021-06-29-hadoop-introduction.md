@@ -2,7 +2,7 @@
 title: Giới thiệu tổng quan Hadoop 
 author: trannguyenhan
 date: 2021-06-29 20:52:00 +0700
-categories: [Apache, Hadoop]
+categories: [Hadoop & Spark]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
@@ -18,7 +18,7 @@ Hadoop gồm 2 tầng chính:
 - Tầng xử lý và tinh toán (MapReduce): MapReduce là một mô hình lập trình song song hóa để xử lý dữ liệu lớn trên một cụm gồm nhiều các máy tính thương mại (commodity hardware)
 - Tầng lưu trữ (HDFS): HDFS cung cấp 1 giải pháp lưu trữ phân tán cũng được thiết kế để chạy trên các máy tính thương mại
 
-Ngoài 2 thành phần được đề cập ở trên thì Hadoop framework cũng gồm 2 mô-đun sau: 
+Ngoài 2 thành phần được đề cập ở trên thì Hadoop framework cũng gồm 2 module sau: 
 - Hadoop Common: là các thư viện, tiện ích viết bằng ngôn ngữ Java
 - Hadoop Yarn: lập lịch và quản lý các tài nguyên
 
@@ -33,7 +33,7 @@ Bạn có thể chạy code trên một cụm các máy tính, quá trình này 
 - HDFS nằm ở trên cùng của hệ thống file cục bộ, giám sát quá trình 
 - Các block được lưu các bản sao để đề phòng quá trình lỗi xảy ra trên phần cứng 
 - Kiểm tra mã được thực hiện thành công chưa
-- Thực hiện bước sort diễn ra giữa map và reduce
+- Thực hiện bước _Sort_ diễn ra giữa _Map_ và _Reduce_
 - Gửi data tới các máy nhất định để thực hiện các bước tiếp theo
 - Viết log cho mỗi công việc hoàn thành
 
