@@ -40,6 +40,6 @@ Bạn có thể chạy code trên một cụm các máy tính, quá trình này 
 ## Ưu điểm của Hadoop 
 - Hadoop cho phép người dùng viết và kiểm tra nhanh trên hệ thống phân tán. Hadoop sử dụng hiệu quả và tự động phân tán dữ liệu và công việc qua nhiều máy trong cùng cụm.
 - Hadoop không yêu cầu phần cứng của các máy trong cụm, bất cứ máy tính nào cũng có thể là 1 phần của cụm Hadoop. Hadoop sẽ phân công công việc hợp lý cho mỗi máy phù hợp với khả năng của mỗi máy.
-- Hadoop cun cấp hệ thống có khả năng chịu lỗi và tính sẵn có cao. Thay vào đó thư viện Hadoop đã được thiết kế để xử lý lỗi từ tầng ứng dụng.
+- Hadoop cung cấp hệ thống có khả năng chịu lỗi và tính sẵn có cao. Thay vào đó thư viện Hadoop đã được thiết kế để xử lý lỗi từ tầng ứng dụng.
 - Cụm có thể add thêm hoặc remove đi các cluster trong cụm mà không ảnh hưởng tới các tiến trình đang chạy
 - Một lợi thế lớn khác của Hadoop là ngoài là mã nguồn mở, nó tương thích trên tất cả các nền tảng vì nó dựa trên Java
