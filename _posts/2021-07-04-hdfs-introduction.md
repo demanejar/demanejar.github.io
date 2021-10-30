@@ -40,7 +40,7 @@ Chức năng của Datanode:
 - Trực tiếp thực hiện và xử lý công việc ( đọc/ghi dữ liệu)
 
 ### Secondary Namenode
-Secondary Namenode là một node phụ chạy cùng với Namenodeạy cùng với Namenode, nhìn tên gọi nhiều người nhầm tưởng rằng nó để backup cho Namenode tuy nhiên không phải vậy, Secondary Namenode như là một trợ lý đắc lực của Namenode, có vai trò và nhiệm vụ rõ ràng:
+Secondary Namenode là một node phụ chạy cùng với Namenode, nhìn tên gọi nhiều người nhầm tưởng rằng nó để backup cho Namenode tuy nhiên không phải vậy, Secondary Namenode như là một trợ lý đắc lực của Namenode, có vai trò và nhiệm vụ rõ ràng:
 - Nó thường xuyên đọc các file, các metadata được lưu trên RAM của datanode và ghi vào ổ cứng.
 - Nó liên đọc nội dung trong Editlogs và cập nhật vào FsImage, để chuẩn bị cho lần khởi động tiếp theo của namenode.
 - Nó liên tục kiểm tra tính chính xác của các tệp tin lưu trên các datanode.
