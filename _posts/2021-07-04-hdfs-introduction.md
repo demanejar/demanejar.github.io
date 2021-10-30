@@ -79,13 +79,13 @@ Theo trình tự trong hình ta có các bước write dữ liệu như sau:
 
 Đó là toàn bộ những gì diễn ra ở đằng sau, còn đây là ví dụ một trong những lênh thao tác ghi trên hdfs 
 
-```
+```bash
 hdfs dfs -put <path_on_your_computer> <path_on_hadoop> 
 ```
 
 Trong quá trình thực tế hầu như sẽ không làm việc trực tiếp với hệ thống file system của hadoop(HDFS) bằng câu lệnh, mà ta thường đọc, ghi qua spark, ví dụ
 
-```
+```scala
 dataFrame.write.save("<path_on_hadoop>")
 ```
 
