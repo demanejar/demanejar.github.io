@@ -2,7 +2,7 @@
 title: HDFS 
 author: trannguyenhan, longpt
 date: 2021-07-04 16:00:00 +0700
-categories: [Apache, Hadoop]
+categories: [Hadoop & Spark]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS]
 math: true
 mermaid: true
@@ -61,10 +61,12 @@ Câu trả lời: HDFS sẽ không tốt khi xử lý một lượng lớn các 
 
 
 ## Hoạt động 
-### Write data 
-Sau đây mình sẽ trình bày nguyên lí chung của đọc ghi trên HDFS
 
-![](https://lh3.googleusercontent.com/8SCIfi_d9F-AytjWWYFLRUG0jeZeiNniIuEKK8XPVwDd-h9Pqsjgu9H0gzsdl3vN7g-6hPLNhutdK0VwqfnCh9dR-jXtQZZw8iWtu6gpU4MZE39TQC0V0KWwrUtzz4RPyozLL7Wx)
+Sau đây mình sẽ trình bày nguyên lí chung của đọc ghi dữ liệu trên HDFS:
+
+### Write data 
+
+![](https://raw.githubusercontent.com/demanejar/image-collection/main/HDFS/writedata.png)
 
 Theo trình tự trong hình ta có các bước write dữ liệu như sau: 
 1.  Client gửi yêu cầu tạo file ở DistributedFileSystem APIs.
@@ -89,7 +91,7 @@ dataFrame.write.save("<path_on_hadoop>")
 
 ### Read data 
 
-![](https://raw.githubusercontent.com/demanejar/image-collection/main/Screenshot%20from%202021-08-26%2018-33-58.png)
+![](https://raw.githubusercontent.com/demanejar/image-collection/main/HDFS/readdata.png)
 
 1. Để mở file, client gọi phương thức open ở FileSystemObject.
 2. DistributedFileSystem gọi Name để lấy vị trí của blocks của file. NameNode trả về địa chỉ của các DataNode chứa bản sao của block đó.
