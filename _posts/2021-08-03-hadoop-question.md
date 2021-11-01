@@ -2,7 +2,7 @@
 title: Tổng hợp các câu hỏi về Apache Hadoop 
 author: trannguyenhan
 date: 2021-08-03 20:52:00 +0700
-categories: [Apache, Hadoop]
+categories: [Hadoop & Spark]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop Yarn]
 math: true
 mermaid: true
