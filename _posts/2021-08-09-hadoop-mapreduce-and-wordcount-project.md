@@ -112,7 +112,7 @@ hdfs dfs -ls /
 ### Bước 4: Chạy chương trình 
 Mọi thứ đã xong bây giờ là submit job của bạn lên Hadoop và chờ đợi kết quả, chạy dòng lệnh sau: 
 ```bash
-	hadoop jar target/wordcount-V1.jar com.hadoop.mapreduce.WordCount hdfs://localhost:9001/input.txt hdfs://localhost:9001/output
+hadoop jar target/wordcount-V1.jar com.hadoop.mapreduce.WordCount hdfs://localhost:9001/input.txt hdfs://localhost:9001/output
 ```
 - Với tham số đầu tiên `hdfs://localhost:9000/input.txt` là đường dẫn tới file input đầu vào, do file input được đặt trên HDFS nên phải thêm vào đường dẫn `hdfs://` nếu không chương trình sẽ hiểu đó là một đường dẫn local
 - Tham số thứ 2 `hdfs://localhost:9001/output` là đường dẫn đặt output của chương trình, chúng ta cũng sẽ lưu output trên HDFS
@@ -159,7 +159,7 @@ hdfs dfs -ls /input
 
 Vậy là đã xong dữ liệu, bây giờ chúng ta run lại chương trình: 
 ```bash
-	hadoop jar target/wordcount-V1.jar com.hadoop.mapreduce.WordCount hdfs://localhost:9001/input hdfs://localhost:9001/output
+hadoop jar target/wordcount-V1.jar com.hadoop.mapreduce.WordCount hdfs://localhost:9001/input hdfs://localhost:9001/output
 ```
 - Lúc này input của chúng ta không phải là file `input.txt` nữa mà là cả thư mục `input` nên hãy đổi lại tham số input
 
