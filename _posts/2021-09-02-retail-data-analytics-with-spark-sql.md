@@ -36,7 +36,7 @@ hdfs dfs -ls /
 
 ### Thư viện và ngôn ngữ sử dụng
 
-Mình là fan cứng của Java vì vậy mình sẽ sử dụng Java để giải quyết bài toán này thay vì Scala. Vì Java là một ngôn ngữ không chính thức của Spark nên có rất ít tài liệu về Spark viết với Java nên mình cũng muốn đóng góp thêm chút ít phần tài liệu về Spark với Java tới cộng đồng.
+Mình là fan cứng của Java vì vậy mình sẽ sử dụng Java để giải quyết bài toán này thay vì Scala. Vì Java không phải là ngôn ngữ triển khai của Spark nên những hỗ trợ về Java cũng không nhiều và cũng có rất ít tài liệu về Spark viết với Java nên mình cũng muốn đóng góp thêm chút ít phần tài liệu về Spark với Java tới cộng đồng.
 
 Các bạn tạo một maven project và thêm vào 2 phụ thuộc sau (phụ thuộc Spark Core và Spark SQL): 
 ```xml
@@ -56,7 +56,7 @@ Các bạn tạo một maven project và thêm vào 2 phụ thuộc sau (phụ t
 ```
 
 ## Phân tích và xử lý dữ liệu bán lẻ
- Nếu bạn mới tìm hiểu về Spark SQL thì hãy xem lại bài viết [Spark SQL, Dataframe và Dataset](https://demanejar.github.io/posts/spark-sql-dataframe-dataset/) để hiểu rõ hơn về SparkSession, Dataframe, Dataset<Row>, các `option` `inferSchema` và `header`. Trong 5 bài tập này mình sẽ giải thích về logic 
+ Nếu bạn mới tìm hiểu về Spark SQL thì hãy xem lại bài viết [Spark SQL, Dataframe và Dataset](https://demanejar.github.io/posts/spark-sql-dataframe-dataset/) để hiểu rõ hơn về SparkSession, Dataframe, Dataset<Row>, các `option` `inferSchema` và `header`. Trong 5 bài tập này mình sẽ giải thích về logic của vấn đề và giải thích những cái mới.
 
 ### Part 1
 *Câu hỏi: Có tổng bao nhiêu giao dịch, sản phẩm và khách hàng khác nhau?*
