@@ -131,4 +131,6 @@ Ngoài ra, chúng ta còn một số các Output Operation khác như:
 - saveAsHadoopFiles
 - foreachRDD
 
+Xem đầy đủ project về Spark Streaming Operation: [TẠI ĐÂY](https://github.com/demanejar/spark-streaming-operation)
+
 Tham khảo: [https://spark.apache.org/](https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html)
