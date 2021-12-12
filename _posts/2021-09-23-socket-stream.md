@@ -89,4 +89,8 @@ Kết quả in ra màn hình và sẽ vụt qua rất nhanh:
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/SocketStream/result_2.png)
 
+Mở cổng 4040 để xem lại chi tiết các job vừa thực hiện (`localhost:4040`): 
+
+![](https://raw.githubusercontent.com/demanejar/image-collection/main/SocketStream/4040.png)
+
 Tham khảo: sách Learning Spark - Zaharia M., et al. (trang 184)
