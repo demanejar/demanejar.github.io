@@ -61,7 +61,7 @@ Khởi động Spark và kiểm tra địa chỉ của master thông qua cổng 
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/SocketStream/socket_stream.png)
 
-Build project vừa rồi thành file `.jar` với câu lệnh: 
+Build project vừa rồi thành file `.jar` với câu lệnh dưới đây, lần đầu build có thể các bạn sẽ phải đợi khá lâu vì nó phải tải xuống các thư viện, trong các lần build sau sẽ nhanh hơn: 
 
 ```bash
 sbt clean package
