@@ -77,7 +77,6 @@ Chúng ta có 5 chế độ chính:
 - `yarn-client`  là chế độ yarn-client 
 - `yarn-cluster`  là chế độ yarn-cluster
 - `mesos://host:5050`  là Mesos cluster
-	(Lưu ý: chế độ yarn-client hay yarn-cluster không hỗ trợ trên spark 3.0, vì thế nếu muốn chạy chúng trên spark 3.0 thì xem thêm [ở đây](https://zeppelin.apache.org/docs/latest/interpreter/spark.html#set-master))
 
 Kéo xuống bên dưới và cấu hình lại thuộc tính `PYSPARK_DRIVER_PYTHON` thành đường dẫn tới trình thông dịch python của bạn: 
 
