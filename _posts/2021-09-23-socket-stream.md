@@ -38,7 +38,7 @@ object SocketStream {
 }
 ```
 
-- Nếu bạn chạy cụm, hãy đổi lại hostname của bạn từ `localhost` thành địa chỉ IP máy master của bạn nha
+- Nếu bạn chạy cụm nhiều máy, hãy đổi lại hostname của bạn từ `localhost` thành địa chỉ IP máy master của bạn nha
 - File này có nhiệm vụ là tạo một `StreamingContext` lắng nghe ở cổng 7777, lọc những dòng có chứa từ `error` và in chúng ra màn hình.
 - Đây là lần đầu tiên mình minh họa Spark với Scala, với những lần trước mình đều minh họa bằng mã Java. Các bạn có thể thấy Scala hao hao giống với Java xong lại có cách viết thì giống với Python. Scala nó như là ngôn ngữ sinh ra để cho Spark rồi ấy, thế nên là ngôn ngữ này có rất nhiều những cái hỗ trợ khi bạn dùng nó để code Spark. 
 
