@@ -23,6 +23,8 @@ File `build.sbt` thì giống với project trước, file này để khai báo 
 
 Cuối cùng là project của chúng ta viết bằng `scala` với 2 file `ApacheAccessLog.scala` và `LogAnalyzerStreaming.scala`. File `LogAnalyzerStreaming.scala` sẽ lắng nghe ở cổng 9999, lấy dữ liệu và tiến hành tổng hợp, phân tích chúng.
 
+Lưu ý: nếu bạn chạy cụm, hãy đổi địa chỉ hostname trong file `LogAnalyzerStreaming.scala` thành địa chỉ máy master nha.
+
 ## Chạy project và xem kết quả
 
 Khởi động Spark và kiểm tra địa chỉ của master thông qua cổng 8080 (`spark://PC0628:7077`):
