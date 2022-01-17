@@ -130,4 +130,4 @@ spark-submit --class demo.sparkstreaming.StreamingConsumer target/SparkStreaming
 
 Truyền dữ liệu vào thông qua `producer` mà bạn vừa tạo ở phần 1 và xem kết quả ở màn hình terminal bạn vừa chạy `spark-submit`.
 
-Toàn bộ project bạn có thể xem tại [https://github.com/trannguyenhan/spark-streaming-kafka-demo](https://github.com/trannguyenhan/spark-streaming-kafka-demo)
+Toàn bộ project bạn có thể xem tại [https://github.com/demanejar/spark-streaming-kafka-demo](https://github.com/demanejar/spark-streaming-kafka-demo)
