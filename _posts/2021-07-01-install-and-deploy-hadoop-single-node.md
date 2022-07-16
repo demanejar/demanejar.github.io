@@ -225,12 +225,12 @@ Tại thư mục sbin, thực hiện các lệnh sau để chạy và khởi đ�
 ./start-all.sh
 ```
 
-Chạy lệnh jsp để kiểm tra các trình daemon đang chạy (các bạn để ý tới 6 daemon bên trên thôi nha, XMLServerLauncher các bạn không cần quan tâm tới nó) : 
+Chạy lệnh jsp để kiểm tra các trình daemon đang chạy: 
 ```bash
 jps
 ```
 
-Nếu kết quả ra 6 trình daemon như sau thì bạn đã cấu hình đúng : 
+Nếu kết quả ra 6 trình daemon như sau thì bạn đã cấu hình đúng (các bạn để ý tới 6 daemon bên trên thôi nha, XMLServerLauncher các bạn không cần quan tâm tới nó): 
 
 ![](https://1.bp.blogspot.com/-XyWzBEAms_o/YGICM8Xp_4I/AAAAAAAABT0/_5oCJiK6cIYJX1WUUyVSfd8lvxvVsRlmACLcBGAsYHQ/s540/Screenshot%2Bfrom%2B2021-03-29%2B23-36-44.png)
 
