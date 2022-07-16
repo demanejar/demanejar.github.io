@@ -225,7 +225,7 @@ Tại thư mục sbin, thực hiện các lệnh sau để chạy và khởi đ�
 ./start-all.sh
 ```
 
-Chạy lệnh jsp để kiểm tra các trình daemon đang chạy : 
+Chạy lệnh jsp để kiểm tra các trình daemon đang chạy (các bạn để ý tới 6 daemon bên trên thôi nha, XMLServerLauncher các bạn không cần quan tâm tới nó) : 
 ```bash
 jps
 ```
