@@ -2,7 +2,7 @@
 title: Giải thích về các chế độ chính khi chạy Spark
 author: trannguyenhan 
 date: 2021-11-02 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Bigdata, Spark, Yarn, Mesos, Apache Mesos]
 math: true
 mermaid: true

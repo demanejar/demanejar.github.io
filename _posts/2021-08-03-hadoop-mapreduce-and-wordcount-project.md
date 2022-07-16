@@ -2,7 +2,7 @@
 title: Hadoop MapReduce và chương trình WordCount cơ bản với MapReduce 
 author: trannguyenhan
 date: 2021-08-03 16:00:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS, Hadoop MapReduce, MapReduce]
 math: true
 mermaid: true

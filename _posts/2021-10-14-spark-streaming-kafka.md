@@ -2,7 +2,7 @@
 title: Spark Streaming với Kafka
 author: trannguyenhan 
 date: 2021-10-14 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Bigdata, Spark, Kafka, Kafka Consumer]
 math: true
 mermaid: true

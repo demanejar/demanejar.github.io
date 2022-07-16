@@ -2,7 +2,7 @@
 title: Phân tích dữ liệu bán lẻ với Spark SQL
 author: trannguyenhan 
 date: 2021-09-02 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark SQL, Bigdata, Spark]
 math: true
 mermaid: true

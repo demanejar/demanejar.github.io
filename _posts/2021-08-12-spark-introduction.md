@@ -2,7 +2,7 @@
 title: Giới thiệu tổng quan về Spark
 author: trannguyenhan
 date: 2021-08-12 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark, Hadoop, Hadoop vs Spark]
 math: true
 mermaid: true

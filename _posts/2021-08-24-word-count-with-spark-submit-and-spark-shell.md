@@ -2,7 +2,7 @@
 title: Chương trình Word Count với spark-submit và spark-shell
 author: trannguyenhan
 date: 2021-08-24 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark, Apache Spark, Bigdata, Ubuntu, Hadoop MapReduce, HDFS]
 math: true
 mermaid: true

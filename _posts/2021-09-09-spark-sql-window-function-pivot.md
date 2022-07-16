@@ -2,7 +2,7 @@
 title: Window function, pivot trong Spark SQL
 author: trannguyenhan 
 date: 2021-09-09 08:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark SQL, Bigdata, Spark, pivot spark, window function]
 math: true
 mermaid: true

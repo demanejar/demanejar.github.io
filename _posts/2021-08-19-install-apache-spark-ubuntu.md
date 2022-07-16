@@ -2,7 +2,7 @@
 title: Cài đặt Apache Spark standalone
 author: trannguyenhan
 date: 2021-08-19 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark, Apache Spark, Bigdata, Ubuntu]
 math: true
 mermaid: true

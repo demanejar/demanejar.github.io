@@ -2,7 +2,7 @@
 title: HDFS 
 author: trannguyenhan, longpt
 date: 2021-07-04 16:00:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Hadoop]
 tags: [Hadoop, Apache Hadoop, Bigdata, HDFS]
 math: true
 mermaid: true

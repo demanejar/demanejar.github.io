@@ -2,7 +2,7 @@
 title: Hadoop Ecosystem
 author: trannguyenhan
 date: 2021-07-02 08:00:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Hadoop]
 tags: [Ubuntu, Hadoop Ecosystem, Bigdata, Java, HDFS, Pig, Kafka, Zookeeper, Hive, HBase, Sqoop]
 math: true
 mermaid: true

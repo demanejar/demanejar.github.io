@@ -2,7 +2,7 @@
 title: Spark SQL, Dataframe và Dataset
 author: trannguyenhan 
 date: 2021-08-26 20:52:00 +0700
-categories: [Hadoop & Spark]
+categories: [Hadoop & Spark, Spark]
 tags: [Spark SQL, Bigdata, Spark]
 math: true
 mermaid: true
