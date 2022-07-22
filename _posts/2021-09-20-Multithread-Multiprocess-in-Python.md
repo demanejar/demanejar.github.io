@@ -258,3 +258,4 @@ Trong Python thì việc sử dụng lập trình đa tiến trình sẽ giúp c
 [Beginers guide to concurrency and parallellism in Python](https://www.toptal.com/python/beginners-guide-to-concurrency-and-parallelism-in-python)
 [Cơ chế GIL trong Python](https://nguyentruonglong.net/co-che-global-interpreter-lock-trong-python.html)
 [Introduction to infamous Python GIL](https://granulate.io/introduction-to-the-infamous-python-gil/)
+[Multithreading in Python](https://www.scaler.com/topics/multithreading-in-python/)
