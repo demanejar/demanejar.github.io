@@ -12,7 +12,7 @@ image:
 
 Crawler, Web Scrape, Web Scraping, thu thập dữ liệu, cào dữ liệu,... chắc là các từ ngữ mà chúng ta hay sử dụng nhất để nói về các công việc tạo ra những chương trình đi phân tích và lấy dữ liệu từ một website. Chắc chắn là có sự khác biệt giữa hai khái niệm `web crawler` và `web scraping`, tuy nhiên về cơ bản là chúng giống nhau và công việc bình thường của chúng ta khi làm thường là sự kết hợp của hai khái niệm này, vậy sau này để cho đơn giản và dễ gọi thì khi nhắc tới hai khái niệm này chúng ta có thể coi chúng là một.
 
-Có một điều là hầu hết các chủ nhân của website đều không thích chúng ta đi cào dữ liệu web của họ. Đầu tiên là vì với những người làm nội dung chân chính thì chắc chắn họ không muốn có người khác sao chép những công sức của họ. Tiếp theo là khi dùng bot thường xuyên để crawl có thể khiến cho website quá tải. Một số website vừa và nhỏ họ thuê những máy chủ không quá lớn để đáp ứng cho một lượng nhỏ các đọc giả của họ, và nếu bot của chúng ta hoạt động quá thường xuyên trên website đó sẽ khiến cho máy chủ hết tài nguyên. Và còn nhiều điều khác nữa...
+Có một điều là hầu hết các chủ nhân của website đều không thích chúng ta đi cào dữ liệu web của họ. Đầu tiên là vì với những người làm nội dung chân chính thì chắc chắn họ không muốn có người khác sao chép những công sức do chính mình bỏ ra. Tiếp theo là khi dùng bot thường xuyên để crawl có thể khiến cho website quá tải. Một số website vừa và nhỏ họ thuê những máy chủ không quá lớn để đáp ứng cho một lượng nhỏ các đọc giả của họ, và nếu bot của chúng ta hoạt động quá thường xuyên trên website đó sẽ khiến cho máy chủ hết tài nguyên. Và còn nhiều điều khác nữa...
 
 ## Sự phát triển của crawl dữ liệu từ website
 
@@ -34,7 +34,7 @@ Nếu bạn dùng qua `Scrapy` sẽ thấy từ phiên bản scrapy 1.1 (2016-05
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/WelcomeSeriesCrawler/javascript.jpeg)
 
-Bây giờ thì các website được gen bằng Javascript đã không còn là khó khăn trong việc crawl nữa. Các trình duyệt như Chrome, Firefox,... nó có thể hiển thị được nội dung trang web là vì nó có một trình dịch Javascript trên các trình duyệt, và trước khi hiển thị cho người dùng nó đã phải chạy các đoạn mã Javascript để thu về nội dung HTML sau đó hiển thị nên cho người dùng. 
+Bây giờ thì các website được gen bằng Javascript đã không còn là khó khăn trong việc crawl nữa. Các trình duyệt như Chrome, Firefox,... nó có thể hiển thị được nội dung trang web là vì nó có một trình dịch Javascript trên các trình duyệt, và trước khi hiển thị cho người dùng nó đã phải chạy các đoạn mã Javascript để thu về nội dung HTML sau đó hiển thị lên cho người dùng. 
 
 Vậy tư tưởng của chúng ta khi crawl các trang web gen bằng Javascript cũng như vậy, trước khi lấy mã để phân tích chúng ta sẽ cho qua một tool chung gian để nó chạy các đoạn mã Javascript và trả về cho chúng ta mã HTML cuối cùng. Với `Scrapy` có thể sử dụng `Splash`, hay có thể sử dụng luôn `Selenium` để giả lập trình duyệt,... (Mình sẽ nói rõ hơn trong các bài viết cụ thể về từng cách).
 
