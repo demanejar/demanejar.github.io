@@ -1,5 +1,5 @@
 ---
-title: Không cần thiết phải bảo vệ website của bạn khỏi bị cào 100%?
+title: Tại sao những người làm website không hoàn toàn muốn bảo vệ website của họ khỏi bị crawl?
 author: trannguyenhan 
 date: 2023-01-24 20:52:00 +0700
 categories: [Crawler]
