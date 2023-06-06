@@ -222,3 +222,5 @@ scrapy crawl alonhadat -o ../data/output.json --set FEED_EXPORT_ENCODING=utf-8
 Dữ liệu thô crawl về bạn có thể tham khảo tại: [https://github.com/trannguyenhan/house-price-prediction/tree/master/data](https://github.com/trannguyenhan/house-price-prediction/tree/master/data).
 
 Hiện tại thì `alonhadat` đang có một số biện pháp để tránh bị crawl, với bài viết này mình cũng chưa đề cập tới việc làm sao để vượt được sự ngăn chặn này của `alonhadat`, mình sẽ đề cập thêm ở các bài viết sau trong series này. Với bài viết này chỉ là cách phân tích và lấy dữ liệu của website. Với các repo được đề cập tới trong bài viết, nếu các bạn thấy hữu ích có thể cho các repo 1 star nha, cảm ơn mọi người! Bài viết này mình cũng kết thúc ở đây thôi.
+
+Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1)

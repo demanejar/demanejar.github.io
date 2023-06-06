@@ -70,3 +70,5 @@ Và để vượt qua được cách bảo vệ này thì chúng ta chỉ cần 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/WelcomeSeriesCrawler/unnamed.jpg)
 
 Việc sử dụng capcha có thể chặn được kha khá bot nhưng lại rất ít được sử dụng vì nó gây một trải nghiệm tồi tệ cho người dùng.
+
+Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1)

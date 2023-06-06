@@ -176,3 +176,5 @@ ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
 ```
 
 Xem docs chi tiết của thư viện này tại [https://github.com/TeamHG-Memex/scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies)
+
+Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1)
