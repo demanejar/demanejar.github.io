@@ -50,7 +50,7 @@ Qua việc tìm hiểu về từng thành phần và chức năng của từng t
 
 ## Cấu hình proxy cho project Scrapy
 
-Nếu bạn chưa biết sử dụng proxy từ website nào thì có thể tham khảo website [https://proxy.webshare.io/](https://proxy.webshare.io/dashboard/), proxy trên website này rẻ mà cũng khá chất lượng, mỗi nick còn có 10 proxy free dùng để test.
+Nếu bạn chưa biết sử dụng proxy từ website nào thì có thể tham khảo website [https://proxy.webshare.io/](https://www.webshare.io/?referral_code=ttjajplnrle1), proxy trên website này rẻ mà cũng khá chất lượng, mỗi nick còn có 10 proxy free dùng để test.
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/scrapy/proxy_webshareio.png)
 
