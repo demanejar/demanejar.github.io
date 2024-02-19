@@ -10,5 +10,5 @@ mermaid: true
 
 Trong bài này mình sẽ hướng dẫn cài đặt Airflow và cài HA cho nó. môi trường sử dụng là máy ảo virtualbox
 
-![](../images/2024-02-18_air.png)
+![](../assets/images/2024-02-18_air.png)
 
