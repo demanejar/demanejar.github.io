@@ -4,10 +4,13 @@ author: lonpgt
 date: 2024-02-18 20:52:00 +0700
 categories: [bigdata]
 tags: [HA, Airflow]
+math: true
+mermaid: true
+img_path: images
 ---
 
 Trong bài này mình sẽ hướng dẫn cài đặt Airflow và cài HA cho nó. môi trường sử dụng là máy ảo virtualbox
 
-![alo](images/2024-02-18_air.png)
+![alo](2024-02-18_air.png)
 
 
