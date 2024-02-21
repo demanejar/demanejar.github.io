@@ -1,7 +1,7 @@
 ---
 title: Hướng dẫn airflow ha
 author: lonpgt 
-date: 2024-02-18 20:52:00 +0700
+date: 2001-02-18 20:52:00 +0700
 categories: [bigdata]
 tags: [HA, Airflow]
 math: true
