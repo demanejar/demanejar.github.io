@@ -1,6 +1,6 @@
 ---
-title: Hướng dẫn airflow ha
-author: lonpgt 
+title: Hướng dẫn airflow HA
+author: longpt 
 date: 2024-02-18 20:52:00 +0700
 categories: [bigdata]
 tags: [HA, Airflow]
@@ -337,6 +337,7 @@ https://github.com/teamclairvoyant/airflow-scheduler-failover-controller/issues/
 
 
 # Note 
+
 - xcom (cross-communications) để truyền thông tin giữa các task trong dag
 - get_pty=True để kill được task trên ui
 - do_xcom_push=False để tránh trường hợp xcom lưu output> 65kb dẫn đến task fail(sử  dụng print hoặc return function)
