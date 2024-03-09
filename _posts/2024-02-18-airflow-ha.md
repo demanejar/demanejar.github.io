@@ -261,7 +261,7 @@ airflow celery worker -q spark,quark
 
 </details>
 
-# Mô hình ha
+# Mô hình HA
 
 
 Web server. chạy trên con thứ 2 với config i hệt: vẫn lên được, chứng tỏ cứ chạy 2 con cùng lúc ha ip là dc. chứng tỏ webserver chỉ cần db là được ? (đồng bộ qua db)
