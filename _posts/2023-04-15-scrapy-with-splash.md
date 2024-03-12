@@ -12,8 +12,6 @@ image:
 
 Tìm hiểu thêm về khái niệm, ưu nhược điểm của Client Side và Server Side Rendering qua bài viết [Client-Side và Server-Side Rendering](https://hacerweb.github.io/server-side-rendering-and-client-side-rendering/).
 
-Mua proxy tại: [https://www.webshare.io/](https://www.webshare.io/?referral_code=ttjajplnrle1)
-
 Chúng ta sẽ thấy có một số website client side rendering, các đoạn mã HTML của nó sẽ được gen ra ở phía trình duyệt người dùng, vì thế khi crawl mặc dù F12 thấy đầy đủ các phần tử của website nhưng đoạn mã tải về lại toàn mã Javascript và không tìm thấy các phần tử cần tìm ở đâu.
 
 Trình duyệt là được như vậy là do nó có một trình dịch mã Javascript, khi tải về đoạn mã của website, trình dịch sẽ dịch đoạn mã Javascript trước để đoạn mã này sinh và tải về các đoạn HTML cần thiết và render lại cho người dùng. Đối với những website được render phía người dùng như này có thể sử dụng 2 cách sau để thu thập dữ liệu từ website: 
@@ -83,5 +81,3 @@ curl --location --request GET 'http://localhost:8050/render.html?url=https://dem
 ```
 
 Đọc chi tiết hơn về Splash tại [https://splash.readthedocs.io/](https://splash.readthedocs.io/).
-
-Mua proxy tại: [https://www.webshare.io/](https://www.webshare.io/?referral_code=ttjajplnrle1)
