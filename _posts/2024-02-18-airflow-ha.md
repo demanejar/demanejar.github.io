@@ -2,7 +2,7 @@
 title: Hướng dẫn Airflow HA
 author: longpt 
 date: 2024-02-18 20:52:00 +0700
-categories: [Bigdata, Share]
+categories: [Blogging]
 tags: [HA, Airflow]
 math: true
 mermaid: true

@@ -2,7 +2,7 @@
 title: Đa luồng và đa tiến trình trong Python
 author: viethoang
 date: 2021-09-20 14:52:00 +0700
-categories: [Bigdata, Share]
+categories: [Blogging]
 tags: [Python]
 math: true
 mermaid: true
