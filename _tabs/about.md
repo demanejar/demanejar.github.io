@@ -9,4 +9,4 @@ Demanejar là một blog về bigdata và những thứ xung quanh bigdata. Dữ
 
 Dữ liệu lớn sẽ là xu hướng trong những năm tới, tuy vậy thì những blog tiếng Việt viết về Bigdata chưa đủ nhiều và chưa đủ sâu thế nên nhóm mình quyết định cùng viết blog này để chia sẻ tới mọi người những kiến thức mà bọn mình biết để đóng góp làm phong phú thêm nguồn tài liệu CNTT tiếng Việt. 
 
-Nếu có bất cứ thắc mắc gì hãy liên hệ với chúng mình qua hòm thư trannguyenhan01092000@gmail.com 
+Nếu có bất cứ thắc mắc gì hãy liên hệ với chúng mình qua hòm thư trannguyenhan01092000@gmail.com hoặc demanejar@gmail.com.
