@@ -6,7 +6,8 @@ categories: [Blogging]
 tags: [Data Lineage, Spark, Spline, Spark Agent]
 math: true
 mermaid: true
-img_path: images
+image:
+  src: https://raw.githubusercontent.com/demanejar/image-collection/main/spline_agent/spline_server.png
 ---
 
 *Spline là một công cụ OpenSource cho phép tự động theo dõi Data Lineage và Data Pipeline Structure. Công việc phổ biến nhất của nó là theo dõi và trực quan hóa Data Lineage cho Spark.*

@@ -6,7 +6,8 @@ categories: [Blogging]
 tags: [HA, Airflow]
 math: true
 mermaid: true
-img_path: images
+image:
+  src: https://longpt233.github.io/images/2024-02-22%2021-44-01.png
 ---
 
 Trong bài này mình sẽ hướng dẫn cài đặt Airflow và cài HA cho nó. môi trường sử dụng là máy ảo virtualbox
