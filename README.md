@@ -14,7 +14,7 @@ Bất kỳ ai cũng có thể gửi bài viết bằng cách thêm bài viết v
 
 - Bài viêt được đóng góp từ bất kỳ chủ đề nào xung quanh dữ liệu như một bài hướng dẫn về công cụ nguồn mở, cài đặt, vận hành,...
 
-- Lưu ý đặt đúng tên bài viết với chủ đề `categories: [Blogging]`, và tên tác giả `author: trannguyenhan` tương ứng thay bằng nickname của bạn.
+- Lưu ý đặt đúng tên bài viết với chủ đề tương ứng gồm có Blogging, Crawler hoặc một chủ đề mới mà bạn muốn thêm chưa có trên website. Tag đặt đúng theo các tag liên quan tới bài viết và tên tác giả `author: ...` tương ứng thay bằng nickname của bạn.
 
 ## Trao đổi
 
