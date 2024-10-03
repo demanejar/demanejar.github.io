@@ -40,9 +40,9 @@ ROBOTSTXT_OBEY = False
 
 ## Các loại trang Facebook
 
-- [mbasic.facebook.com](mbasic.facebook.com): trang tĩnh -> không có js, chỉ có html
-- [touch.facebook.com](touch.facebook.com), [m.facebook.com](m.facebook.com): là các trang dạng cho mobile cũ (dùng các user agent cũ hay user agent web), nếu dùng user agent cho mobile thì website trả về là dạng khá mới, cực khó phan tích
-- [www.facebook.com](www.facebook.com): giao diện chính, khó phân tích tuy nhiên không phải là không thể
+- [https://mbasic.facebook.com](https://mbasic.facebook.com): trang tĩnh -> không có js, chỉ có html
+- [https://touch.facebook.com](https://touch.facebook.com), [https://m.facebook.com](https://m.facebook.com): là các trang dạng cho mobile cũ (dùng các user agent cũ hay user agent web), nếu dùng user agent cho mobile thì website trả về là dạng khá mới, cực khó phan tích
+- [https://www.facebook.com](https://www.facebook.com): giao diện chính, khó phân tích tuy nhiên không phải là không thể
 
 Tùy vào nhu cầu và mục đích lấy dữ liệu chúng ta có thể sử dụng trang phù hợp. Ví dụ nếu dùng Jsoup Java không thể crawl trang web gen Javascript vậy thì crawl trực tiếp từ trang mbasic sẽ rất phù hợp,...
 
