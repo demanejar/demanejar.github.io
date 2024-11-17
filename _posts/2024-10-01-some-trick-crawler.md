@@ -58,3 +58,29 @@ Cái gì nhanh, thao tác liên tục bất thường thì trước sau gì cũn
 
 Sử dụng thw viện [https://pypi.org/project/undetected-chromedriver/2.1.1/](https://pypi.org/project/undetected-chromedriver/2.1.1/), mình đã thử và rất hiệu quả.
 
+## User Agent
+
+Tầm quan trọng của User Agent khi crawl nhất là khi crawl các website lớn như Facebook, Youtube,... Các nền tảng này đều xây dựng các phiên bản riêng dành cho các User Agent khác nhau từ Mobile hay PC. Sử dụng User Agent hợp lý sẽ giúp website dễ phân tích hơn ( sử dụng User Agent của Google Bot, Bing Bot, Mobile cũ).
+
+## Chế độ headless của Selenium
+
+Headless của Selenium có thể không hiệu quả khi crawl bằng Selenium. 
+
+Selenium giúp mô phỏng gần như hoàn toàn thao tác của con người giúp bypass rất nhiều trình chặn của website, tuy nhiên khi crawl bằng Selenium có một vấn đề là chúng ta phải bật trình duyệt lên điều này khiên cho deploy ứng dụng lên server không có UI sẽ bị lỗi, lúc này chúng ta nghĩ tới `--headless` của Selenium sẽ giúp ứng dụng khi chạy không mở trình duyệt tuy nhiên phương pháp này sẽ không giải quyết được hoàn toàn vấn đề khi một số website vẫn bắt được khi bạn để chế độ `--headless` và ngay lập tức sẽ bị chặn.
+
+Phương pháp mình đưa ra là: 
+
+- 1 là sử dụng Remote Webdriver
+
+```python
+options = webdriver.ChromeOptions()
+driver = webdriver.Remote(command_executor=server, options=options)
+```
+
+- 2 là sử dụng `xvfb` màn hình ảo
+
+```bash
+DISPLAY=:1 xvfb-run --auto-servernum --server-num=1 python sele.py
+```
+
+Bài viết này chỉ là các trick nhỏ khi crawl nên mình nói ngắn gọn về cách làm, khi tới các bài viết cụ thể về từng phần mình sẽ nói rõ hơn về cách sử dụng, cài đặt.
