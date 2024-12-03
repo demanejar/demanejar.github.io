@@ -84,3 +84,16 @@ DISPLAY=:1 xvfb-run --auto-servernum --server-num=1 python sele.py
 ```
 
 Bài viết này chỉ là các trick nhỏ khi crawl nên mình nói ngắn gọn về cách làm, khi tới các bài viết cụ thể về từng phần mình sẽ nói rõ hơn về cách sử dụng, cài đặt.
+
+## Xóa bỏ HTML tag 
+
+Nếu việc phân tích trang HTML và lấy ra dữ liệu không thể loại bỏ hoàn toàn các thẻ HTML của trang thì sử dụng hàm sau để loại bỏ.
+
+```python
+def remove_html_tag(html_content):
+    if html_content is None:
+        return None
+
+    text = re.sub(r'<[^>]+>', '', html_content)
+    return text
+```
