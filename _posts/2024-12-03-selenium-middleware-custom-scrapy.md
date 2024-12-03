@@ -97,6 +97,14 @@ driver.execute_script(
 
 Với điều kiện là `driver` đã được update vào trong request của middleware trước đó `request.meta.update({'driver': self.driver})` như trong SeleniumBaseMiddleware.
 
+Trong file `settings` thêm SeleniumBaseMiddleware vào trong DOWNLOADER_MIDDLEWARES:
+
+```python
+DOWNLOADER_MIDDLEWARES = {
+   "seleniummiddlewarescrapydemo.middlewares.SeleniumBaseMiddleWare": 543,
+}
+```
+
 Bây giờ việc crawl website rất là dễ dàng khi không còn bị chặn bởi Cloudflare và đã gen toàn bộ mã Javascript của website động thành HTML để dễ dàng phân tích.
 
 Toàn bộ project xem tại: [https://github.com/demanejar/selenium-middleware-scrapy-demo](https://github.com/demanejar/selenium-middleware-scrapy-demo)
