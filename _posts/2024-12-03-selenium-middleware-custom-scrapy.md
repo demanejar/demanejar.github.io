@@ -3,7 +3,7 @@ title: Cài đặt Selenium Middleware cho Scrapy
 author: trannguyenhan 
 date: 2024-12-03 20:52:00 +0700
 categories: [Crawler]
-tags: [Crawler]
+tags: [Crawler, Selenium, Scrapy]
 math: true
 mermaid: true
 image:
