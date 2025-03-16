@@ -9,6 +9,7 @@ mermaid: true
 image:
   src: https://raw.githubusercontent.com/demanejar/image-collection/main/SparkStreaming/streaming-arch.png
 ---
+
 *Bài viết trước chúng ta đã làm quen với Spark Streaming với một project đơn giản về lọc từ, trong bài viết này chúng ta sẽ xem xét project phức tạp hơn một tí về phân tích log.*
 
 ## Chuẩn bị Project
@@ -41,7 +42,7 @@ sbt clean package
 
 Chạy spark-submit với file jar vừa bulid được:
 
-```
+```bash
 spark-submit --master spark://PC0628:7077 --class LogAnalyzerStreaming target/scala-2.12/log-analyzer_2.12-0.0.1.jar
 ```
 
@@ -52,7 +53,7 @@ Trong bài viết trước, chúng ta đã gửi dữ liệu thông qua socket b
 
 Như mình giải thích ở ban đầu, file `stream.sh` là một file shell script với nhiệm vụ là đọc dữ liệu từ file `log.txt` và đẩy chúng qua cổng 9999. Sử dụng câu lệnh sau để bắt đầu chạy: 
 
-```
+```bash
 ./stream.sh log.txt
 ```
 
@@ -62,7 +63,7 @@ Kết quả in ra màn hình cũng sẽ vụt qua rất nhanh, các bạn có th
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/LogAnalyzer/start_project.png)
 
-Mở cổng 4040 để xem lại chi tiết các job vừa thực hiện (`localhost:4040`):
+Mở cổng `4040` để xem lại chi tiết các job vừa thực hiện (`localhost:4040`):
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/LogAnalyzer/4040.png)
 

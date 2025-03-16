@@ -106,4 +106,4 @@ if(count($image) > 0){
 fclose($file);
 ```
 
-Toàn bộ project bạn có thể xem thêm tại [https://github.com/trannguyenhan/php-scraper](https://github.com/trannguyenhan/php-scraper)
+Toàn bộ project bạn có thể xem thêm tại [https://github.com/trannguyenhan/php-scraper](https://github.com/trannguyenhan/php-scraper).

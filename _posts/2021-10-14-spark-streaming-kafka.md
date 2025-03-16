@@ -9,6 +9,7 @@ mermaid: true
 image:
   src: https://raw.githubusercontent.com/demanejar/image-collection/main/SparkStreamingKafka/streaming-arch.png
 ---
+
 Trong 2 bài ví dụ về [Spark Streaming](https://demanejar.github.io/posts/socket-stream/) trước thì mình đã minh họa về Spark Streaming nhận dữ liệu qua socket và xử lý chúng. Tuy nhiên, trong thực tế thì ít khi chúng ta sử dung socket để truyền và xử lý dữ liệu thay vào đó chúng ta sẽ thường sử dụng các hàng đợi tin nhắn (Message Queue) mà tiêu biểu nhất ở đây chính là Kafka.
 
 Để tìm hiểu nhanh về Kafka cũng như các cách sử dụng của chúng (tạo topic, xem topic, tạo producer, tạo consumer) thì bạn có thể xem nhanh tại đây: [https://kafka.apache.org/quickstart](https://kafka.apache.org/quickstart)
@@ -35,7 +36,7 @@ bin/kafka-console-producer.sh --topic topic-1 --bootstrap-server localhost:9092
 
 Cấu trúc project gồm 2 package `demo.sparkstreaming` chứa hàm `main` và `demo.sparkstreaming.properties` chứa các cấu hình của Spark Streaming Consumer:
 
-```
+```bash
 - SparkStreamingDemo: 
 	- demo.sparkstreaming
 		- StreamingConsumer.java

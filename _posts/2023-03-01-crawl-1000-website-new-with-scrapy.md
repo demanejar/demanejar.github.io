@@ -250,8 +250,8 @@ class CrawlerPipeline:
 
 ```
 
-Toàn bộ project Crawl này các bạn có thể tham khảo tại link GITHUB: [https://github.com/demanejar/crawler-1000news](https://github.com/demanejar/crawler-1000news)
+Toàn bộ project Crawl này các bạn có thể tham khảo tại link GITHUB: [https://github.com/demanejar/crawler-1000news](https://github.com/demanejar/crawler-1000news).
 
-Để lập lịch cho con `Spider` chạy hàng ngày có thể sử dụng `crontab`, cái này hoạt động khá đơn giản, copy lệnh chạy vào file nó quét qua là được. Xem thêm về `cron` tại [https://viblo.asia/p/task-schedule-trong-laravel-naQZRkOqlvx#_crontab-0](https://viblo.asia/p/task-schedule-trong-laravel-naQZRkOqlvx#_crontab-0)
+Để lập lịch cho con `Spider` chạy hàng ngày có thể sử dụng `crontab`, cái này hoạt động khá đơn giản, copy lệnh chạy vào file nó quét qua là được. Xem thêm về `cron` tại [https://viblo.asia/p/task-schedule-trong-laravel-naQZRkOqlvx#_crontab-0](https://viblo.asia/p/task-schedule-trong-laravel-naQZRkOqlvx#_crontab-0).
 
-Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1)
+Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1).

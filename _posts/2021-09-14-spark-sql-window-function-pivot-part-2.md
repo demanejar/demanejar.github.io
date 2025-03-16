@@ -7,14 +7,18 @@ tags: [Spark SQL, Bigdata, Spark, pivot spark, window function]
 math: true
 mermaid: true
 image:
-  src: https://i.pinimg.com/originals/cc/38/cd/cc38cddba42b235e5e23638e9473b7d8.jpg
+  src: https://raw.githubusercontent.com/demanejar/image-collection/refs/heads/main/SparkWindowFunction/cc38cddba42b235e5e23638e9473b7d8.jpg
 ---
+
 *Nếu bạn chưa xem phần 1 thì có thể xem lại [TẠI ĐÂY](https://demanejar.github.io/posts/spark-sql-window-function-pivot/) nha, bài viết hôm nay mình sẽ giới thiệu tiếp tới mọi người một số ví dụ về window function và pivot sâu hơn để mọi người có thể hiểu rõ hơn về window function và pivot trong Spark*
 
 ## Example 5: Window function 
+
 ### Yêu cầu 
+
 Cho tập dữ liệu dạng _.csv_ như sau: 
-```
+
+```bash
 time,department,items_sold,running_total
 1,IT,15,15
 2,Support,81,81
@@ -27,6 +31,7 @@ time,department,items_sold,running_total
 9,HR,27,27
 10,IT,75,154
 ```
+
 -   Đọc dữ liệu vào spark từ file csv chứa dữ liệu.
 -   Dùng SparkSQL query độ lệch giữa các running_total liên tiếp nhau theo thời gian của các department
 
@@ -61,9 +66,11 @@ OUTPUT:
 | 8| Support| 1| 228| 1|
 
 ### Lời giải 
+
 Chúng ta sẽ thấy là bài này giống bài tính tổng tích lũy tại [Ví dụ 4](https://demanejar.github.io/posts/spark-sql-window-function-pivot/#example-4-window-function) chỉ khác là tại ví dụ này chúng ta sẽ đi tính hiệu giữa 2 _running_total_ liên tiếp mà không phải là  tổng. 
 
 Để giải quyết bài này thì mình đưa ra một lời giải hơi phức tạp 1 tí như sau: 
+
 ```java
 package part5;
 
@@ -98,10 +105,13 @@ public class Main {
 ```
 
 Ngắn gọn lại lời giải trên, thì để tính được cột _diff_ ta sẽ lấy tổng của _running_total_ của hàng hiện và hàng trước đó trừ đi _running_total_ của hàng hiện tại để lấy ra _running_total_ của hàng trước đó, gọi cột mới này là cột _diff_2_. Sau đó lấy _running_total_ của mỗi hàng hiện tại trừ đi _running_total_ của hàng trước đó (là cột _diff_2_) thì ta sẽ ra được kết quả. Sở dĩ làm phức tạp như vậy mà không lấy luôn _running_total_ của hàng trước đó qua _window function_ là để tránh đi kết quả `null`, nếu ta lấy luôn giá trị _running_total_ của hàng trước đó bằng _window function_ sau:  
+
 ```java
 WindowSpec wins = Window.partitionBy("department").orderBy("time").rowsBetween(Window.currentRow() - 1, Window.currentRow()-1);
 ```
+
 Thì ta sẽ tạo được thêm cột mới là giá trị _running_total_ của hàng trước đó và công việc bây giờ chỉ cần trừ đi sẽ có được kết quả cuối cùng, đơn giản như vậy nhưng kết quả của phương pháp trên bị vướng giá trị `null` như dưới đây: 
+
 ```bash
 +----+----------+----------+-------------+----+
 |time|department|items_sold|running_total|diff|
@@ -118,12 +128,16 @@ Thì ta sẽ tạo được thêm cột mới là giá trị _running_total_ c�
 |   8|   Support|         1|          228|   1|
 +----+----------+----------+-------------+----+
 ```
+
 Và mình vẫn chưa tìm được cách `replace` giá trị `null` kia thế nên mình giải quyết bài toán này bằng 1 phương pháp hơi phức tạp như trên. 
 
 ## Example 6: Window function 
+
 ### Yêu cầu
+
 Cho tập dữ liệu đầu vào _.csv_ như sau: 
-```
+
+```bash
 id,name,department,salary
 1,Hunter Fields,IT,15
 2,Leonard Lewis,Support,81
@@ -136,6 +150,7 @@ id,name,department,salary
 9,Owen Boone,HR,27
 10,Max McBride,IT,75
 ```
+
 -   Đọc dữ liệu vào spark từ file csv
 -   Tìm sự chênh lệch salary giữa nhân viên có lương cao nhất với các nhân viên còn lại trong từng phòng ban
 
@@ -170,7 +185,9 @@ OUTPUT:
 | 8|Josephine Leonard| Support| 1| 89|
 
 ### Lời giải 
+
 Bài này khá là đơn giản hơn so với các bài bên trên, chúng ta chỉ cần tìm ra giá trị `max` của _department_ và trừ đi là xong: 
+
 ```java
 package part6;
 
@@ -199,9 +216,12 @@ public class Main {
 ```
 
 ## Example 7: Window function 
+
 ### Yêu cầu
+
 Cho tập dữ liệu dưới dạng đầu vào _.csv_ như sau: 
-```
+
+```bash
 Employee,Salary
 Tony,50
 Alan,45
@@ -222,6 +242,7 @@ John,42
 -   Phần còn lại nhận giá trị “Low”
 
 ### Lời giải 
+
 Thoạt nhìn thì ta sẽ thấy nó đơn giản nhưng nhìn chung nó cũng không được đơn giản cho lắm. 
 Hướng làm cho bài này mà mình đưa ra sẽ là: 
 - Sắp xếp lại giá trị lương theo thứ tự từ cao tới thấp
@@ -230,6 +251,7 @@ Hướng làm cho bài này mà mình đưa ra sẽ là:
 - Thêm cột _Percentage_ bằng cách những nhân viên nào có giá trị phần trăm tính ở bước trên từ 0.7 tới 1 thì là _High_, từ 0.3 tới 0.7 thì là _Average_, từ 0 tới 0.3 là _Low_
 
 Mã nguồn lời giải này như sau: 
+
 ```java
 package part7;
 
@@ -267,9 +289,12 @@ public class Main {
 ```
 
 ## Example 8: Window function 
+
 ### Yêu cầu
+
 Cho tập dữ liệu với đầu vào _.csv_ như sau: 
-```
+
+```bash
 id,title,genre,quantity
 1,Hunter Fields,romance,15
 2,Leonard Lewis,thriller,81
@@ -287,7 +312,9 @@ id,title,genre,quantity
 -   Lọc những tilte có số lượng quantity top 1 và top 2 với mỗi genre
 
 ### Lời giải 
+
 Bài này mình có thể giải quyết mà không cần sử dụng _windows function_ như sau: 
+
 ```java
 package part8;
 
@@ -323,9 +350,12 @@ public class Main {
 ```
 
 ## Example 9: pivot
+
 ### Yêu cầu
+
 Cho tập dữ liệu với đầu vào _.csv_ như sau: 
-```
+
+```bash
 1,Question1Text,Yes,abcde1,0,"(x1,y1)"
 2,Question2Text,No,abcde1,0,"(x1,y1)"
 3,Question3Text,3,abcde1,0,"(x1,y1)"
@@ -354,7 +384,9 @@ OUTPUT:
 | abcde2| 0|(x2,y2)| No| Yes| null|
 
 ### Lời giải 
+
 Bài này cũng khá tương tự với lại [ví dụ 3](https://demanejar.github.io/posts/spark-sql-window-function-pivot/#example-3-pivot), nên bạn có thể xem lại [ví dụ 3](https://demanejar.github.io/posts/spark-sql-window-function-pivot/#example-3-pivot) để hiểu hơn 1 số chỗ phép biến đổi nha: 
+
 ```java
 package part9;
 
@@ -378,8 +410,9 @@ public class Main {
 ```
 
 ## Tổng kết
+
 Bạn có thể xem lại toàn bộ mã nguồn của 9 ví dụ trên [TẠI ĐÂY](https://github.com/demanejar/window-function-pivot-spark-sql) (Nếu thấy thú vị thì và bổ ích cho nhóm mình 1 star trong repo nha).
 
-File tổng hợp các ví dụ các bạn có thể xem [TẠI  ĐÂY](https://github.com/demanejar/window-function-pivot-spark-sql/tree/master/resource)
+File tổng hợp các ví dụ các bạn có thể xem [TẠI  ĐÂY](https://github.com/demanejar/window-function-pivot-spark-sql/tree/master/resource).
 
 Mong rằng 9 ví dụ này giúp cho các bạn hiểu qua được phần vào về _window function_ và _pivot_ trong Spark SQL hơn.

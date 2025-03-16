@@ -7,15 +7,19 @@ tags: [Spark SQL, Bigdata, Spark, pivot spark, window function]
 math: true
 mermaid: true
 image:
-  src: https://i.pinimg.com/originals/cc/38/cd/cc38cddba42b235e5e23638e9473b7d8.jpg
+  src: https://raw.githubusercontent.com/demanejar/image-collection/refs/heads/main/SparkWindowFunction/cc38cddba42b235e5e23638e9473b7d8.jpg
 ---
+
 *Window aggregate functions (hay thường được gọi tắt là window functions hoặc windowed aggregates) là hàm giúp hỗ trợ tính toán trên 1 nhóm các bản ghi được gọi là cửa sổ mà có liên quan tới bản ghi hiện tại.*
 
 Nhìn chung thì những phần này khá trìu tượng về mặt lý thuyết nên đọc lý thuyết càng gây ra các cảm giác khó hiểu nên thế mình sẽ giới thiệu _window function_ và _pivot_ qua những ví dụ để dễ dàng hình dung hơn nha.
 
 ## Example 1: Simple select 
+
 ### Yêu cầu 
+
 Cho tập dữ liệu dưới dạng file csv như sau với tên file là `input.csv`: 
+
 ```
 id,name,population
 0,Warsaw,1 764 615
@@ -23,6 +27,7 @@ id,name,population
 2,Vranje,83 524
 3,Pittsburgh,1 775 634
 ```
+
 -   Load dữ liệu từ csv file
 -   Query population lớn nhất
 
@@ -42,7 +47,9 @@ OUTPUT:
 |   1775634|
 
 ### Lời giải 
+
 Bài này mang tính chất khởi động thôi chứ chưa hề động gì tới _window function_ hay _pivot_ cả, mọi người làm như bình thường: 
+
 ```java
 package part1;
 
@@ -68,6 +75,7 @@ public class Main {
 - _option_ _inferSchema_ sẽ mặc định cho Spark tự nhận dạng dữ liệu đầu vào mà không cần chúng ta phải tạo _schema_ nữa
 
 Chúng ta sẽ được kết quả của bài 1 như sau: 
+
 ```bash
 +----------+
 |population|
@@ -77,7 +85,9 @@ Chúng ta sẽ được kết quả của bài 1 như sau:
 ```
 
 ## Example 2: group function 
+
 ### Yêu cầu 
+
 Cho tập dữ liệu sau: 
 
 | id|group|
@@ -98,7 +108,9 @@ Nhóm lại các _id_ cùng _group_ và cho ra output như sau:
 Lưu ý: [0,2,4] là biểu diễn mảng
 
 ### Lời giải 
+
 Bài này cũng chưa phải _window function_ hay _pivot_ gì, chúng ta nhóm bằng việc sử dụng hàm _group_ như sau: 
+
 ```java
 package part2;
 
@@ -137,6 +149,7 @@ public class Main {
 ```
 
 Chúng ta sẽ được kết quả của bài 2 như sau: 
+
 ```bash
 +-----+---------+
 |group|      ids|
@@ -147,7 +160,9 @@ Chúng ta sẽ được kết quả của bài 2 như sau:
 ```
 
 ## Example 3: pivot
+
 ### Yêu cầu 
+
 Cho tập dữ liệu như sau: 
 
 | id|day|price|units|
@@ -174,7 +189,9 @@ Sử dụng _pivot_ và cho ra kết quả như sau:
 |102| 23| 45| 67| 78| 10| 11| 16| 18|
 
 ### Lời giải 
+
 Đầu tiên là chúng ta sẽ đi tạo tập dữ liệu theo yêu cầu đề bài (các bạn cũng có thể tạo 1 file csv và đọc vào cũng được nha, ở đây mình muốn tạo dữ liệu bởi nhiều cách để có thể giới thiệu hết 1 lượt những cách tạo dữ liệu input trong _spark_): 
+
 ```java
 StructType schema = new StructType().add("id", "integer")
 				.add("day", "integer")
@@ -197,14 +214,17 @@ listOfdata.add(RowFactory.create(102,4,78,18));
 ```
 
 Nhìn vào yêu cầu output chúng ta sẽ thấy là sẽ có 2 yêu cầu rõ rệt là sẽ xoay ngang cột _price_ và cột _unit_. Vậy chúng ta cũng sẽ làm từng bước một, ***đầu tiên*** là xoay ngang cột _price_ ra trước như sau: 
+
 ```java
 Dataset<Row> result_1 = data.withColumn("concat_day", functions.concat(functions.lit("price_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("price"));
 ```
+
 - `functions.concat()` giúp tạo ra các giá trị cho cột mới là _price_ cộng với đuôi là giá trị _day_ 
 - `pivot` giúp xoay ngang lại bảng dữ liệu ban đầu với cột xoay là cột vừa mới tạo _concat_day_
 
 Kết quả của bước đầu tiên sẽ là: 
+
 ```bash
 +---+-------+-------+-------+-------+
 | id|price_1|price_2|price_3|price_4|
@@ -216,12 +236,14 @@ Kết quả của bước đầu tiên sẽ là:
 ```
 
 Tương tự ta  xoay ngang dữ liệu ban đầu theo cột _unit_ ở ***bước 2*** như sau: 
+
 ```java
 Dataset<Row> result_2 = data.withColumn("concat_day", functions.concat(functions.lit("unit_"), data.col("day")))
 				.groupBy("id").pivot("concat_day").agg(functions.first("units"));
 ```
 
 Kết quả của bước 2 là: 
+
 ```bash
 +---+------+------+------+------+
 | id|unit_1|unit_2|unit_3|unit_4|
@@ -232,12 +254,14 @@ Kết quả của bước 2 là:
 +---+------+------+------+------+
 ```
 
-Công việc ***còn lại*** là đơn giản rồi, chỉ cần nối 2 bảng lại là xong: 
+Công việc ***còn lại*** là đơn giản rồi, chỉ cần nối 2 bảng lại là xong:
+
 ```java
 Dataset<Row> result = result_1.join(result_2, "id").sort("id");
 ```
 
 Ta sẽ có kết quả cuối cùng là: 
+
 ```bash
 +---+-------+-------+-------+-------+------+------+------+------+
 | id|price_1|price_2|price_3|price_4|unit_1|unit_2|unit_3|unit_4|
@@ -249,9 +273,12 @@ Ta sẽ có kết quả cuối cùng là:
 ```
 
 ## Example 4: window function
+
 ### Yêu cầu 
+
 Cho tập dữ liệu sau: 
-```
+
+```bash
 time,department,items_sold
 1,IT,15
 2,Support,81
@@ -266,8 +293,9 @@ time,department,items_sold
 ```
 
 Yêu cầu:
+
 -   Load dữ liệu vào spark từ file csv
--   Tính running_total hay ***tổng tích lũy*** số item đã bán được đến thời điểm time.
+-   Tính running_total hay ***tổng tích lũy*** số item đã bán được đến thời điểm time
 
 Output có dạng như sau: 
 
@@ -286,7 +314,9 @@ Output có dạng như sau:
 
 
 ### Lời giải 
+
 Phân tích output tí ta có thể thấy: 
+
 - Các bản ghi được nhóm lại theo từng _department_ và sắp xếp theo _time_
 - Cột _running_total_ được tính bằng tổng tích lũy các _items_sold_ ở phía trước nó mà cùng _department_
 
@@ -321,6 +351,7 @@ public class Main {
 - `functions.sum("items_sold").over(wins)` là giá trị của cột `running_total` được tạo bằng tổng của cột _items_sold_ giới hạn trong cửa sổ `wins`
 
 Kết quả cuối cùng của ví dụ 4 sẽ là: 
+
 ```bash
 +----+----------+----------+-------------+
 |time|department|items_sold|running_total|

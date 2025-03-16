@@ -9,6 +9,7 @@ mermaid: true
 image:
   src: https://raw.githubusercontent.com/demanejar/image-collection/main/SparkIntro/hadoopvsspark.png
 ---
+
 ## Tổng quan về Apache Spark 
 
 Spark ban đầu được Matei Zaharia bắt đầu tại AMPLab của UC Berkeley vào năm 2009 và được mở nguồn vào năm 2010 theo giấy phép BSD. Vào năm 2013, dự án đã được quyên góp cho Apache Software Foundation và chuyển giấy phép sang Apache 2.0. Vào tháng 2 năm 2014, Spark trở thành Dự án Apache Cấp cao nhất.
@@ -16,11 +17,13 @@ Spark ban đầu được Matei Zaharia bắt đầu tại AMPLab của UC Berke
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/SparkIntro/spark_history.png)
 
 **Tại sao Spark lại ra đời?**
+
 - Trước khi Spark ra đời, Hadoop đang là một công cụ mạnh mẽ và phổ biến, tuy nhiên Hadoop có những hạn chế nhất định và Spark ra đời để cải thiện các hạn chế đó.
-- Mô hình lập trình của MapReduce hiện tại dựa trên _acyclic data flow_ (dòng dữ liệu tuần hoàn) từ một bộ nhớ ổn định tới một bộ nhớ ổn định, nôm na là Hadoop nhận đầu vào từ một bộ nhớ ổn định và sau mỗi Task hoàn thành kết quả được lưu lại trên một bộ nhớ ổn định. Điều này khiến cho việc nếu muốn dùng lại dữ liệu đó chúng ta phải đọc lại dữ liệu từ bộ nhớ.
-- Machine learning phát triển dẫn tới việc khi chúng ta chạy một thuật toán machine learning trên Hadoop sẽ mất thời gian. Vì các thuật toán Machine learning đa số là các thuật toán thuộc dạng Iterative algorithms (lặp đi lặp lại) nên việc sau mỗi lân lặp dữ liệu được lưu tại một bộ nhớ ổn định và được đọc lại để làm đầu vào cho vòng lặp tiếp theo là tốn rất nhiều thời gian.
+- Mô hình lập trình của MapReduce hiện tại dựa trên _acyclic data flow_ (dòng dữ liệu tuần hoàn) từ một bộ nhớ ổn định tới một bộ nhớ ổn định, nôm na là Hadoop nhận đầu vào từ một bộ nhớ ổn định và sau mỗi Task hoàn thành kết quả được lưu lại trên một bộ nhớ ổn định. Điều này khiến cho việc nếu muốn dùng lại dữ liệu đó chúng ta phải đọc lại dữ liệu từ bộ nhớ
+- Machine learning phát triển dẫn tới việc khi chúng ta chạy một thuật toán machine learning trên Hadoop sẽ mất thời gian. Vì các thuật toán Machine learning đa số là các thuật toán thuộc dạng Iterative algorithms (lặp đi lặp lại) nên việc sau mỗi lân lặp dữ liệu được lưu tại một bộ nhớ ổn định và được đọc lại để làm đầu vào cho vòng lặp tiếp theo là tốn rất nhiều thời gian
 
 **Mục tiêu của Spark:**
+
 - Tối ưu hóa để xử lý lặp đi lặp lại đối với các bài toán học máy 
 - Phân tích dữ liệu tương tác trong khi vẫn giữ được khả năng mở rộng và khả năng chịu lỗi của Hadoop MapReduce
 - Xử lý dữ liệu tinh vi 
@@ -33,9 +36,9 @@ Spark ban đầu được Matei Zaharia bắt đầu tại AMPLab của UC Berke
 
 - *Spark core*: là các hàm, thư viện cơ sở, cung cấp các chức năng cần thiết như lập lịch, I/O,...
 - *Spark streaming*: là thành phần hỗ trợ xử lý các dữ liệu streams, dữ liệu đầu vào có thể là từ nhiều nguồn như Socket, Kafka, Flume,...
-- *Spark SQL*: là một mô-đun Spark để xử lý dữ liệu có cấu trúc. Nó cung cấp một chương trình trừu tượng gọi là DataFrames và cũng có thể hoạt động như một công cụ truy vấn SQL phân tán. 
-- *Spark MLib*: cung cấp các thư viện hỗ trợ nhiều thuật toán machine learning.
-- *Spark GraphX*: là API Spark dành cho đồ thị và tính toán song song đồ thị.
+- *Spark SQL*: là một mô-đun Spark để xử lý dữ liệu có cấu trúc. Nó cung cấp một chương trình trừu tượng gọi là DataFrames và cũng có thể hoạt động như một công cụ truy vấn SQL phân tán
+- *Spark MLib*: cung cấp các thư viện hỗ trợ nhiều thuật toán machine learning
+- *Spark GraphX*: là API Spark dành cho đồ thị và tính toán song song đồ thị
 
 ## Spark vs Hadoop
 
@@ -45,7 +48,7 @@ Spark ban đầu được Matei Zaharia bắt đầu tại AMPLab của UC Berke
 
 ### Tốc độ (Performance)
 
-![](https://phoenixnap.com/kb/wp-content/uploads/2021/04/hadoop-performance-coparison.png)
+![](https://raw.githubusercontent.com/demanejar/image-collection/refs/heads/main/SparkIntro/hadoop-performance-coparison.png)
 *(Ảnh: phoenixnap)*
 
 Như mình đã nói trong phần mục tiêu của Spark, Spark ra đời để giải quyết vấn đề khi phải I/O nhiều của Hadoop. Vì thế Spark nhanh hơn rất nhiều so với Hadoop. Theo Apache, Spark dường như nhanh hơn 100 lần khi sử dụng RAM để tính toán so với Hadoop MapReduce.

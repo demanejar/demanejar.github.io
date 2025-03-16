@@ -9,6 +9,7 @@ mermaid: true
 image:
   src: https://raw.githubusercontent.com/demanejar/image-collection/main/ModeInSpark/run_spark_mode.png
 ---
+
 Khi sử dụng Spark các bạn có thể thấy có rất là nhiều các chế độ khác nhau như _local_, _standalone_, _yarn_,... chắc hẳn rất nhiều người còn chưa hiểu rõ về các chế độ này nhất là khi mình sử dụng các chế độ trong từng bài viết của mình trên blog, trong bài viết này mình sẽ nói  rõ về các chế độ và tại sao trong các bài viết có lúc mình minh họa bằng chế độ _local_, lúc thì lại minh họa bằng chế độ _standalone_, mục đích chính của bài viết là để các bạn hiểu rõ hơn khi đọc các bài viết trên blog của mình.
 
 ## Các chế độ chính 
@@ -26,11 +27,13 @@ Chúng ta có 5 chế độ chính trong Spark đó là:
 Trong blog của mình các bạn có thể thấy khi thì mình sử dụng chế độ _local_ ( là lúc mình set master là `local`, `local[2]` hoặc `local[*]`), lúc thì mình sử dụng chế độ _standalone_ ( là lúc mình set master là  `spark://master:7077` với `master` tương ứng là tên master node của cụm Spark), và trong phần này mình sẽ giải thích kĩ càng tại sao trong từng bài viết mình lại sử dụng các chế độ này, không chỉ blog của mình mà rất nhiều các blog khác kể cả các blog tiếng Việt hay tiếng Anh đều đang sử dụng như vậy.
 
 Các bạn có thể thấy với những bài viết mang tính chất cài đặt hay là kiểu thiên về quy trình như các bài viết: 
+
 - [Cài đặt Apache Spark standalone](https://demanejar.github.io/posts/install-apache-spark-ubuntu/)
 - [Chương trình Word Count với spark-submit và spark-shell](https://demanejar.github.io/posts/word-count-with-spark-submit-and-spark-shell/)
 - ...
 
 thì mình thường sử dụng chế độ _standalone_ tức là mình sẽ set master tương ứng là  `spark://master:7077`, còn một số bài viết kiểu ví dụ minh họa hay các bài viết hướng dẫn cách làm tức là chúng ta chú trọng tới cách giải quyết bài toán đó như các bài viết: 
+
 - [Phân tích dữ liệu bán lẻ với Spark SQL](https://demanejar.github.io/posts/retail-data-analytics-with-spark-sql/)
 - [Window function, pivot trong Spark SQL](https://demanejar.github.io/posts/spark-sql-window-function-pivot/)
 - ...

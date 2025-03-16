@@ -22,11 +22,11 @@ Spline gồm 3 thành phần chính:
 
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/spline_agent/data_structure_spark.png)
 
-- Spline Server: Spline server là phần quan trọng nhất của Spline, nó đảm nhận nhiệm vụ thu thập và xử lý dữ liệu, nhận thông tin data lineage được gửi về từ agent thông qua producer API và lưu chúng vào CSDL ArangoDB và cung cấp một consumer API để đọc và truy vấn lineage data. Consumer API được sử dụng bởi Spline UI hoặc bất kỳ ứng dụng bên thứ 3 nào muốn trực quan hóa kết quả data lineage được Spline thu thập.
+- Spline Server: Spline server là phần quan trọng nhất của Spline, nó đảm nhận nhiệm vụ thu thập và xử lý dữ liệu, nhận thông tin data lineage được gửi về từ agent thông qua producer API và lưu chúng vào CSDL ArangoDB và cung cấp một consumer API để đọc và truy vấn lineage data. Consumer API được sử dụng bởi Spline UI hoặc bất kỳ ứng dụng bên thứ 3 nào muốn trực quan hóa kết quả data lineage được Spline thu thập
 
-- Spline Agents: Spline Agent là một thành phần sẽ được khai báo nằm trong ứng dụng Spark để lấy dữ liệu data lineage của Spark. Mỗi lần Spark Job chạy, Spline Agent sẽ lấy thông tin data lineage và gửi sang producer API để Spline Server sử lý và lưu vào CSDL.
+- Spline Agents: Spline Agent là một thành phần sẽ được khai báo nằm trong ứng dụng Spark để lấy dữ liệu data lineage của Spark. Mỗi lần Spark Job chạy, Spline Agent sẽ lấy thông tin data lineage và gửi sang producer API để Spline Server sử lý và lưu vào CSDL
 
-- Spline UI: là công cụ để trực quan hóa dòng dữ liệu của Spark Job được Spline thu thập. Spline UI có thể được thay thế bằng các ứng dụng của bên thứ 3 khác ví dụ như Open Metadata.
+- Spline UI: là công cụ để trực quan hóa dòng dữ liệu của Spark Job được Spline thu thập. Spline UI có thể được thay thế bằng các ứng dụng của bên thứ 3 khác ví dụ như Open Metadata
 
 *Lưu ý: Các phiên bảng từ spline 0.3 trở về trước sử dụng MongoDB làm CSDL, tuy nhiên từ các phiên bản 0.4 Spline thay thế chúng bằng một CSDL dạng document mạnh mẽ hơn là ArangoDB.*
 

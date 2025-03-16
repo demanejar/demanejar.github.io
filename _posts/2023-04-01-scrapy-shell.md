@@ -62,4 +62,4 @@ scrapy shell ./path/to/file.html
 
 Scrapy Shell là một công cụ debug hữu hiệu, còn một số tính năng nữa mà Scrapy Shell cung cấp, nhưng trong bài viết này hay là series này mình chỉ xin phép nói tới những thứ thực sự hữu ích mà mình hay dùng. Kiến thức là rất nhiều thế nên chúng ta nên chắt lọc những thứ hay sử dụng, thường xuyên sử dụng để tránh bị quá tải, những thứ còn lại biết cách search hoặc chỗ để xem lại là được.
 
-Xem thêm về Scrapy shell tại: [https://docs.scrapy.org/en/latest/topics/shell.html](https://docs.scrapy.org/en/latest/topics/shell.html)
+Xem thêm về Scrapy shell tại: [https://docs.scrapy.org/en/latest/topics/shell.html](https://docs.scrapy.org/en/latest/topics/shell.html).

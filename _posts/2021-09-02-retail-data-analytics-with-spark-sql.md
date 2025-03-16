@@ -7,11 +7,13 @@ tags: [Spark SQL, Bigdata, Spark]
 math: true
 mermaid: true
 image:
-  src: https://i.pinimg.com/originals/50/64/13/5064132e69821108d0c4fff3c6afd9ce.jpg
+  src: https://raw.githubusercontent.com/demanejar/image-collection/refs/heads/main/SparkSQL/5064132e69821108d0c4fff3c6afd9ce.jpg
 ---
+
 _Như đã tìm hiểu ở bài viết trước về [Spark SQL, Dataframe và Dataset](https://demanejar.github.io/posts/spark-sql-dataframe-dataset/), Spark SQL là một mô hình để xử lý dữ liệu có cấu trúc của Spark rất phổ biến. Trong bài viết này chúng ta sẽ sử dụng Spark SQL để đi phân tích, xử lý một dữ liệu bán lẻ có cấu trúc cho trước_
 
 ## Dữ liệu và chuẩn bị dữ liệu
+
 ### Dữ liệu
 
 Cho dataset đính kèm về dữ liệu bán lẻ online [TẠI ĐÂY](https://github.com/demanejar/retails/blob/master/resources/retails.csv), hãy phân tích dữ liệu trên để trả lời 5 câu hỏi sau đây: 
@@ -25,6 +27,7 @@ Cho dataset đính kèm về dữ liệu bán lẻ online [TẠI ĐÂY](https://
 ### Chuẩn bị dữ liệu
 
 Để trực quan thì dữ liệu chúng ta sẽ đẩy lên HDFS và Spark SQL sẽ lấy dữ liệu trực tiếp từ HDFS để xử lý, để đẩy dữ liệu lên HDFS chúng ta sử dụng câu lệnh: 
+
 ```bash
 hdfs dfs -copyFromLocal resources/retails.csv /
 ```
@@ -39,6 +42,7 @@ hdfs dfs -ls /
 Mình là fan cứng của Java vì vậy mình sẽ sử dụng Java để giải quyết bài toán này thay vì Scala. Vì Java không phải là ngôn ngữ triển khai của Spark nên những hỗ trợ về Java cũng không nhiều và cũng có rất ít tài liệu về Spark viết với Java nên mình cũng muốn đóng góp thêm chút ít phần tài liệu về Spark với Java tới cộng đồng.
 
 Các bạn tạo một maven project và thêm vào 2 phụ thuộc sau (phụ thuộc Spark Core và Spark SQL): 
+
 ```xml
 <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
 <dependency>
@@ -56,9 +60,11 @@ Các bạn tạo một maven project và thêm vào 2 phụ thuộc sau (phụ t
 ```
 
 ## Phân tích và xử lý dữ liệu bán lẻ
+
  Nếu bạn mới tìm hiểu về Spark SQL thì hãy xem lại bài viết [Spark SQL, Dataframe và Dataset](https://demanejar.github.io/posts/spark-sql-dataframe-dataset/) để hiểu rõ hơn về SparkSession, Dataframe, Dataset<Row>, các `option` `inferSchema` và `header`. Trong 5 bài tập này mình sẽ giải thích về logic của vấn đề và giải thích những cái mới.
 
 ### Part 1
+
 *Câu hỏi: Có tổng bao nhiêu giao dịch, sản phẩm và khách hàng khác nhau?*
 
 Với câu hỏi thứ nhất, chúng ta lấy ra từng loại giao dịch, sản phẩm và khách hàng và đếm số lượng của từng loại: 
@@ -104,10 +110,12 @@ public class Main {
 	}
 }
 ```
-- Chúng ta nhìn vào bản ghi có thể thấy là các giá trị khách hàng, sản phẩm hay hóa đơn đều có những bản ghi lặp lại, vì vậy trước khi đếm chúng ta phải sử dụng `distinct()` để lọc các giá trị trùng.
-- Nhìn vào câu 2 chúng ta có thể thấy là có những khách hàng sẽ không có thông tin, vì thế trường `CustomerID` sẽ có những trường `NULL` và chúng ta phải bỏ chúng đi, vì thế `cntCustomers` phải trừ đi 1.
+
+- Chúng ta nhìn vào bản ghi có thể thấy là các giá trị khách hàng, sản phẩm hay hóa đơn đều có những bản ghi lặp lại, vì vậy trước khi đếm chúng ta phải sử dụng `distinct()` để lọc các giá trị trùng
+- Nhìn vào câu 2 chúng ta có thể thấy là có những khách hàng sẽ không có thông tin, vì thế trường `CustomerID` sẽ có những trường `NULL` và chúng ta phải bỏ chúng đi, vì thế `cntCustomers` phải trừ đi 1
 
 ### Part 2
+
 *Câu hỏi: Tỉ lệ khách hàng không có thông tin*
 
 Câu hỏi 2 này cũng gần giống với câu hỏi đầu tiên. Chúng ta đếm những khách hàng không có thông tin và chia cho tổng số lượng khách hàng: 
@@ -141,6 +149,7 @@ public class Main {
 - Sử dụng `isNull()` để lấy ra các dòng NULL chính xác hơn
 
 ### Part 3
+
 *Câu hỏi: Đâu là nước có số lượng đơn hàng (Quantity) nhiều thứ 3?*
 
 Với câu hỏi này, chúng ta nhóm lại các đơn hàng theo từng quốc gia và tính tổng số lượng theo Quantity: 
@@ -165,9 +174,11 @@ public class Main {
 	}
 }
 ```
-- Trong câu này chúng ta truy vấn trực tiếp bằng câu lệnh SQL với `Spark.sql()`. Kết quả đầu ra khi sử dụng `Spark.sql` là một `Dataset<Row>` và sử dụng bình thường như những `Dataset<Row>` được khai báo khác khác.
+
+- Trong câu này chúng ta truy vấn trực tiếp bằng câu lệnh SQL với `Spark.sql()`. Kết quả đầu ra khi sử dụng `Spark.sql` là một `Dataset<Row>` và sử dụng bình thường như những `Dataset<Row>` được khai báo khác khác
 
 ### Part 4
+
 *Câu hỏi: Từ nào xuất hiện ít nhất trong phần Description?*
 
 Câu hỏi này có lẽ là câu hỏi phức tạp nhất trong phần này, chúng ta phải lấy ra phần `Description` và xử lý chúng. 
@@ -220,10 +231,11 @@ public class Main {
 	}
 }
 ```
-- `data.where("Description is not null")` để bỏ đi những trường NULL, vì chúng vừa không mang lại gì mà còn hay gây ra lỗi `NullPointerException`.
-- `RowEncoder` sẽ nói cho Spark biết `StructType` của dữ liệu mới sau khi biến đổi của bạn có dạng như nào.
+- `data.where("Description is not null")` để bỏ đi những trường NULL, vì chúng vừa không mang lại gì mà còn hay gây ra lỗi `NullPointerException`
+- `RowEncoder` sẽ nói cho Spark biết `StructType` của dữ liệu mới sau khi biến đổi của bạn có dạng như nào
 
 ### Part 5
+
 *Câu hỏi: Sản phẩm nào bán được số lượng (Quantity) lớn nhất ở United Kingdom?*
 
 ```java

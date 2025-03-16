@@ -24,9 +24,9 @@ Với hình ảnh này có thể tạm dự đoán là alonhadat đang chặn bo
 
 Với những website sử dụng cách ban này thì cơ bản sẽ có 2 cách để tránh: 
 
-- 1 là dùng proxy, thật nhiều proxy. Phải tùy theo website chặn như nào, nếu như cái ngưỡng chặn của website là nhỏ (ngưỡng ở đây mình đang muốn nói tới là số lượt truy cập website trên một thời gian nhất định) thì chúng ta sẽ phải cần thật nhiều proxy, còn nếu ngưỡng này cao hơn thì chúng ta có thể sẽ cần ít proxy hơn. Còn việc cần bao nhiêu proxy là đủ thì phải qua thử nghiệm. Ví dụ như trước mình crawl website [https://www.yelp.com/](https://www.yelp.com/), mình sử dụng 1 pool có 10 proxy, mỗi request để cách nhau là 2s và mỗi request sẽ pick random 1 proxy để truy cập vào website thì sau 2-3 tiếng thì 10 proxy đã bị ban sạch, vì thế mình quyết định tăng lên 100, thời gian lần này lâu hơn là sau 1 đêm 100 proxy này cũng bị ban sạch, vấn đề là giờ cần nhiều proxy hơn nữa, 1000 thì sao? Và đấy mới dừng lại ở dự đoán thôi và vì 1000 proxy thì bao tiền cho đủ nên mình quyết định thôi.
+- 1 là dùng proxy, thật nhiều proxy. Phải tùy theo website chặn như nào, nếu như cái ngưỡng chặn của website là nhỏ (ngưỡng ở đây mình đang muốn nói tới là số lượt truy cập website trên một thời gian nhất định) thì chúng ta sẽ phải cần thật nhiều proxy, còn nếu ngưỡng này cao hơn thì chúng ta có thể sẽ cần ít proxy hơn. Còn việc cần bao nhiêu proxy là đủ thì phải qua thử nghiệm. Ví dụ như trước mình crawl website [https://www.yelp.com/](https://www.yelp.com/), mình sử dụng 1 pool có 10 proxy, mỗi request để cách nhau là 2s và mỗi request sẽ pick random 1 proxy để truy cập vào website thì sau 2-3 tiếng thì 10 proxy đã bị ban sạch, vì thế mình quyết định tăng lên 100, thời gian lần này lâu hơn là sau 1 đêm 100 proxy này cũng bị ban sạch, vấn đề là giờ cần nhiều proxy hơn nữa, 1000 thì sao? Và đấy mới dừng lại ở dự đoán thôi và vì 1000 proxy thì bao tiền cho đủ nên mình quyết định thôi
 
-- 2 thì khó hơn đó là viết script để bypass capcha. Cách này không hẳn lúc nào cũng dùng được vì có một số website họ chặn luôn chứ không phải là bắt người dùng vượt capcha để tiếp tục xem nội dung, tiêu biểu như [https://www.yelp.com/](https://www.yelp.com/) và website này tất nhiên là có ngưỡng chặn lớn hơn. Với việc các capcha này rất dễ thay đổi sang loại khác vì vậy các đoán script bạn viết cũng dùng được trong một thời gian khá ngắn, và hiện nay cũng có nhiều các loại capcha rất phức tạp, việc có thể bypass các loại capcha mới này nhìn chung là khó.
+- 2 thì khó hơn đó là viết script để bypass capcha. Cách này không hẳn lúc nào cũng dùng được vì có một số website họ chặn luôn chứ không phải là bắt người dùng vượt capcha để tiếp tục xem nội dung, tiêu biểu như [https://www.yelp.com/](https://www.yelp.com/) và website này tất nhiên là có ngưỡng chặn lớn hơn. Với việc các capcha này rất dễ thay đổi sang loại khác vì vậy các đoán script bạn viết cũng dùng được trong một thời gian khá ngắn, và hiện nay cũng có nhiều các loại capcha rất phức tạp, việc có thể bypass các loại capcha mới này nhìn chung là khó
 
 Với cách ban này cũng mang lại trải nghiệm khá tệ cho người dùng. Khi mình là người đi crawl thì alonhadat đang ban IP của mình và mình vào website đang phải vượt capcha, nhưng các bạn cùng phòng của mình dùng chung một wifi và có chung một IP cũng đang bị bắt vươt capcha như vậy mặc dù họ trả làm gì. Vì thế có thể là website đang sử dụng phương pháp này là tạm thời trong thời trong khi họ nghiên cứu để có phương án tốt hơn.
 
@@ -36,7 +36,7 @@ Với cách ban này cũng mang lại trải nghiệm khá tệ cho người dù
 
 Scrapy sẽ gồm 6 thành phần: 
 
-- Scrapy Engine: chịu trách nhiệm trong việc điều khiển dòng dữ liệu di chuyển giữa các thành phần trong hệ thống, kích hoạt một số sự kiện trong một số điều kiện nhất định.
+- Scrapy Engine: chịu trách nhiệm trong việc điều khiển dòng dữ liệu di chuyển giữa các thành phần trong hệ thống, kích hoạt một số sự kiện trong một số điều kiện nhất định
 
 - Downloader: tìm và tải các đoạn mã HTML từ trang web được chỉ định
 
@@ -44,7 +44,7 @@ Scrapy sẽ gồm 6 thành phần:
 
 - Item Pipeline: chịu trách nhiệm xử lý các Item được trích xuất và tạo bởi Spiders
 
-- Middleware: sẽ có 2 loại middleware, 1 là middleware nằm giữa Spiders và Engine, middleware này thường sẽ ít sử dụng hơn vì các đoạn mã được viết trong Spider Middleware cũng có thể thay thế bằng cách viết trong Spiders hoặc Item Pipeline. 2 là Downloader Middleware nằm giữa Downloader và Engine, nó nhằm mục đích xử lý các request trước khi chúng được đưa tới Downloader điển hình nhất như là thêm proxy vào các request.
+- Middleware: sẽ có 2 loại middleware, 1 là middleware nằm giữa Spiders và Engine, middleware này thường sẽ ít sử dụng hơn vì các đoạn mã được viết trong Spider Middleware cũng có thể thay thế bằng cách viết trong Spiders hoặc Item Pipeline. 2 là Downloader Middleware nằm giữa Downloader và Engine, nó nhằm mục đích xử lý các request trước khi chúng được đưa tới Downloader điển hình nhất như là thêm proxy vào các request
 
 Qua việc tìm hiểu về từng thành phần và chức năng của từng thành phần chắc mọi người đều đã hình dung ra chúng ta sẽ cấu hình proxy cho từng request trong Downloader Middleware.
 
@@ -123,9 +123,9 @@ class DataPriceDownloaderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 ```
 
-- Chúng ta định nghĩa trước một `proxyPools` đọc từ file `proxies.txt` vừa được thêm vào project.
+- Chúng ta định nghĩa trước một `proxyPools` đọc từ file `proxies.txt` vừa được thêm vào project
 
-- Trong `process_request` chúng ta sẽ pick random một proxy bất kì và add chúng vào headers.
+- Trong `process_request` chúng ta sẽ pick random một proxy bất kì và add chúng vào headers
 
 Bây giờ vào file `settings.py` tìm tới vị trí `DOWNLOADER_MIDDLEWARES` và bỏ comment, sau đó thêm vào môt `HttpProxyMiddleware` nữa để các Middleware này được gọi tới khi bắt đầu crawl: 
 
@@ -175,6 +175,6 @@ Hoặc sử dụng `ROTATING_PROXY_LIST_PATH` để cấu hình tới file proxi
 ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
 ```
 
-Xem docs chi tiết của thư viện này tại [https://github.com/TeamHG-Memex/scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies)
+Xem docs chi tiết của thư viện này tại [https://github.com/TeamHG-Memex/scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies).
 
-Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1)
+Vì website không có mục bình luận dưới bài viết nên mọi người thảo luận và góp ý cho mình tại GITHUB DISCUSSION này nha: [https://github.com/orgs/demanejar/discussions/1](https://github.com/orgs/demanejar/discussions/1).

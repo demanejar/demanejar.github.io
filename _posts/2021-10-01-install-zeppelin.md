@@ -9,6 +9,7 @@ mermaid: true
 image:
   src: https://raw.githubusercontent.com/demanejar/image-collection/main/zeppelin/thumbnail.png
 ---
+
 *Chắc chúng ta quen nhiều hơn với Jupyter notebook và Zeppelin notebook có thể còn chưa được nghe tới bao giờ. Zeppelin notebook hay Apache Zeppelin là một ứng dụng dựa trên web cho phép phân tương tác trực tiếp với SQL, Scala, Python, R và hơn thế nữa.*
 
 ### Tải về Zeppelin
@@ -72,6 +73,7 @@ Chuyển tới phần `spark` và chỉnh sửa lại giá trị của `spark.ma
 ![](https://raw.githubusercontent.com/demanejar/image-collection/main/zeppelin/spark_interpreter.png)
 
 Chúng ta có 5 chế độ chính: 
+
 - `local[*]`:  là chế độ local, chế độ này chúng ta có thể chạy mà không cần bật Spark
 - `spark://master:7077`: chuyển lại `master` thành tên master node của bạn, ví dụ như của mình là `spark://PC0628:7077`, đây là chế độ standalone cluster.
 - `yarn-client`  là chế độ yarn-client 

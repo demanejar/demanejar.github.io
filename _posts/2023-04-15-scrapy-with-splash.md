@@ -16,8 +16,8 @@ Chúng ta sẽ thấy có một số website client side rendering, các đoạn
 
 Trình duyệt là được như vậy là do nó có một trình dịch mã Javascript, khi tải về đoạn mã của website, trình dịch sẽ dịch đoạn mã Javascript trước để đoạn mã này sinh và tải về các đoạn HTML cần thiết và render lại cho người dùng. Đối với những website được render phía người dùng như này có thể sử dụng 2 cách sau để thu thập dữ liệu từ website: 
 
-- 1. Sử dụng API. Các website render động thường sử dụng API để lấy dữ liệu. Ấn F12 và theo dõi tab network để tìm ra API mà website lấy dữ liệu.
-- 2. Chúng ta sẽ làm giống với những gì mà trình duyệt đang làm, sẽ có một trình biên dịch mã Javascript để render ra mã HTML trước khi phân tích. 2 công cụ phổ biến nhất đó là Selenium và Splash. Với Scrapy nó thường được sử dụng kèm với Splash, để so sánh sự khác biệt giữa Scrapy và Selenium có thể xem tại [https://webscraping.fyi/lib/compare/python-selenium-vs-python-splash/](https://webscraping.fyi/lib/compare/python-selenium-vs-python-splash/).
+- 1. Sử dụng API. Các website render động thường sử dụng API để lấy dữ liệu. Ấn F12 và theo dõi tab network để tìm ra API mà website lấy dữ liệu
+- 2. Chúng ta sẽ làm giống với những gì mà trình duyệt đang làm, sẽ có một trình biên dịch mã Javascript để render ra mã HTML trước khi phân tích. 2 công cụ phổ biến nhất đó là Selenium và Splash. Với Scrapy nó thường được sử dụng kèm với Splash, để so sánh sự khác biệt giữa Scrapy và Selenium có thể xem tại [https://webscraping.fyi/lib/compare/python-selenium-vs-python-splash/](https://webscraping.fyi/lib/compare/python-selenium-vs-python-splash/)
 
 Trong bài viết này chúng ta sẽ đi thu thập dữ liệu từ một số website song ngữ và được gen động bởi Javascript. Website minh họa là [https://toomva.com](https://toomva.com). Toàn bộ project các bạn có thể xem tại [https://github.com/trannguyenhan/bilingualcrawl-vietnamese-english](https://github.com/trannguyenhan/bilingualcrawl-vietnamese-english).
 
