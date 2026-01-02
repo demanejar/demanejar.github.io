@@ -18,6 +18,6 @@ Nếu có bất cứ thắc mắc gì hãy liên hệ với chúng mình qua hò
 
 - Tất cả dịch vụ và nền tảng đều miễn phí cho nhà phát triển: [https://demanejar.github.io/freefordev/](https://demanejar.github.io/freefordev/).
 
-- Danh sách các trang web kiếm tiền trực tuyến tuyệt vời: https://demanejar.github.io/onlineearning/.
+- Danh sách các trang web kiếm tiền trực tuyến tuyệt vời: [https://demanejar.github.io/onlineearning/](https://demanejar.github.io/onlineearning/).
 
-- Công ty Công nghệ Việt Nam: tên, mô tả, địa chỉ, trang web: https://demanejar.github.io/companytechvn/.
+- Công ty Công nghệ Việt Nam: tên, mô tả, địa chỉ, trang web: [https://demanejar.github.io/companytechvn/](https://demanejar.github.io/companytechvn/).
